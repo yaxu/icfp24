@@ -1,0 +1,166 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{10}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Ablamowicz and Fauser(2007)]%
+        {Ablamowicz07}
+\bibfield{author}{\bibinfo{person}{Rafal Ablamowicz} {and}
+  \bibinfo{person}{Bertfried Fauser}.} \bibinfo{year}{2007}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{CLIFFORD: a Maple 11 Package for Clifford
+  Algebra Computations, version 11}}.
+\newblock
+\urldef\tempurl%
+\url{http://math.tntech.edu/rafal/cliff11/index.html}
+\showURL{%
+Retrieved February 28, 2008 from \tempurl}
+
+
+\bibitem[Abril and Plant(2007)]%
+        {Abril07}
+\bibfield{author}{\bibinfo{person}{Patricia~S. Abril} {and}
+  \bibinfo{person}{Robert Plant}.} \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{The patent holder's dilemma: Buy, sell, or troll?}
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{50},
+  \bibinfo{number}{1} (\bibinfo{date}{Jan.} \bibinfo{year}{2007}),
+  \bibinfo{pages}{36--44}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/1188913.1188915}
+\showDOI{\tempurl}
+
+
+\bibitem[Anzaroot and McCallum(2013)]%
+        {UMassCitations}
+\bibfield{author}{\bibinfo{person}{Sam Anzaroot} {and} \bibinfo{person}{Andrew
+  McCallum}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{{UMass} Citation Field Extraction
+  Dataset}}.
+\newblock
+\urldef\tempurl%
+\url{http://www.iesl.cs.umass.edu/data/data-umasscitationfield}
+\showURL{%
+Retrieved May 27, 2019 from \tempurl}
+
+
+\bibitem[Harel(1978)]%
+        {Harel78}
+\bibfield{author}{\bibinfo{person}{David Harel}.}
+  \bibinfo{year}{1978}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{LOGICS of Programs: AXIOMATICS and
+  DESCRIPTIVE POWER}}.
+\newblock \bibinfo{type}{MIT Research Lab Technical Report} TR-200.
+  \bibinfo{institution}{Massachusetts Institute of Technology},
+  \bibinfo{address}{Cambridge, MA}.
+\newblock
+
+
+\bibitem[Kosiur(2001)]%
+        {Kosiur01}
+\bibfield{author}{\bibinfo{person}{David Kosiur}.}
+  \bibinfo{year}{2001}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Understanding Policy-Based Networking}
+  (\bibinfo{edition}{2nd.} ed.)}.
+\newblock \bibinfo{publisher}{Wiley}, \bibinfo{address}{New York, NY}.
+\newblock
+
+
+\bibitem[Obama(2008)]%
+        {Obama08}
+\bibfield{author}{\bibinfo{person}{Barack Obama}.}
+  \bibinfo{year}{2008}\natexlab{}.
+\newblock \bibinfo{title}{A more perfect union}.
+\newblock \bibinfo{howpublished}{Video}.
+\newblock
+\urldef\tempurl%
+\url{http://video.google.com/videoplay?docid=6528042696351994555}
+\showURL{%
+Retrieved March 21, 2008 from \tempurl}
+
+
+\bibitem[{R Core Team}(2019)]%
+        {R}
+\bibfield{author}{\bibinfo{person}{{R Core Team}}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{R: A Language and Environment for
+  Statistical Computing}}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
+\newblock
+\urldef\tempurl%
+\url{https://www.R-project.org/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Schneider(2022)]%
+        {doclicense}
+\bibfield{author}{\bibinfo{person}{Robin Schneider}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{The \textsl{doclicense} package}}.
+\newblock
+\urldef\tempurl%
+\url{http://www.ctan.org/pkg/doclicense}
+\showURL{%
+Retrieved May 27, 2022 from \tempurl}
+
+
+\bibitem[Thornburg(2001)]%
+        {Thornburg01}
+\bibfield{author}{\bibinfo{person}{Harry Thornburg}.}
+  \bibinfo{year}{2001}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Introduction to Bayesian Statistics}}.
+\newblock
+\urldef\tempurl%
+\url{http://ccrma.stanford.edu/~jos/bayes/bayes.html}
+\showURL{%
+Retrieved March 2, 2005 from \tempurl}
+
+
+\bibitem[Veytsman(2017)]%
+        {CTANacmart}
+\bibfield{author}{\bibinfo{person}{Boris Veytsman}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{acmart---{Class} for typesetting
+  publications of {ACM}}}.
+\newblock
+\urldef\tempurl%
+\url{http://www.ctan.org/pkg/acmart}
+\showURL{%
+Retrieved May 27, 2017 from \tempurl}
+
+
+\end{thebibliography}

@@ -1,0 +1,26 @@
+This is makeindex, version 2.15 [TeX Live 2022/dev] (kpathsea + Thai support).
+Scanning style file /usr/share/texlive/texmf-dist/makeindex/latex/gglo.ist........
+** Input style error (file = /usr/share/texlive/texmf-dist/makeindex/latex/gglo.ist, line = 66):
+   -- Unknown specifier lethead_prefix.
+** Input style error (file = /usr/share/texlive/texmf-dist/makeindex/latex/gglo.ist, line = 67):
+   -- Unknown specifier lethead_suffix.
+** Input style error (file = /usr/share/texlive/texmf-dist/makeindex/latex/gglo.ist, line = 68):
+   -- Unknown specifier lethead_flag.
+......done (14 attributes redefined, 3 ignored).
+Scanning input file acmart.glo....
+!! Input index error (file = acmart.glo, line = 81):
+   -- Extra `|' at position 35 of first argument.
+
+!! Input index error (file = acmart.glo, line = 107):
+   -- Extra `|' at position 47 of first argument.
+
+!! Input index error (file = acmart.glo, line = 281):
+   -- Extra `|' at position 73 of first argument.
+
+!! Input index error (file = acmart.glo, line = 284):
+   -- Extra `|' at position 85 of first argument.
+done (537 entries accepted, 4 rejected).
+Sorting entries.......done (5037 comparisons).
+Generating output file acmart.gls....done (766 lines written, 0 warnings).
+Output written in acmart.gls.
+Transcript written in acmart.ilg.

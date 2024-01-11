@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}User's guide}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Installation}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Invocation and options}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Top matter}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Top matter of ACM Engage materials}{18}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}ACM cover page}{19}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Internationalization}{20}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Algorithms}{21}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Figures and tables}{21}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Descriptions of images}{22}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Theorems}{22}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Online-only and offline-only material}{23}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}Note about anonymous mode}{23}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Acknowledgments}{24}{subsection.2.13}%
+\contentsline {subsection}{\numberline {2.14}Bibliography}{24}{subsection.2.14}%
+\contentsline {subsubsection}{\numberline {2.14.1}Processing using Bib\TeX }{24}{subsubsection.2.14.1}%
+\contentsline {subsubsection}{\numberline {2.14.2}Processing using Bib\LaTeX }{28}{subsubsection.2.14.2}%
+\contentsline {subsection}{\numberline {2.15}Colors}{28}{subsection.2.15}%
+\contentsline {subsubsection}{\numberline {2.15.1}Manual bibliography}{29}{subsubsection.2.15.1}%
+\contentsline {subsection}{\numberline {2.16}Other notable packages and typographic remarks}{29}{subsection.2.16}%
+\contentsline {subsection}{\numberline {2.17}Counting words}{30}{subsection.2.17}%
+\contentsline {subsection}{\numberline {2.18}Creative Commons licenses for ACM publications}{30}{subsection.2.18}%
+\contentsline {subsection}{\numberline {2.19}Disabled or forbidden commands}{30}{subsection.2.19}%
+\contentsline {subsection}{\numberline {2.20}Notes for wizards}{31}{subsection.2.20}%
+\contentsline {subsection}{\numberline {2.21}Currently supported publications}{31}{subsection.2.21}%
+\contentsline {subsection}{\numberline {2.22}A note about \texttt {sigchi-a} format}{33}{subsection.2.22}%

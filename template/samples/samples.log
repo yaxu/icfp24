@@ -1,0 +1,205 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.14)  10 JAN 2024 10:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**samples.ins
+(./samples.ins
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/docstrip.tex
+\blockLevel=\count185
+\emptyLines=\count186
+\processedLines=\count187
+\commentsRemoved=\count188
+\commentsPassed=\count189
+\codeLinesPassed=\count190
+\TotalprocessedLines=\count191
+\TotalcommentsRemoved=\count192
+\TotalcommentsPassed=\count193
+\TotalcodeLinesPassed=\count194
+\NumberOfFiles=\count195
+\inFile=\read2
+\inputcheck=\read3
+\off@0=\count196
+\off@1=\count197
+\off@2=\count198
+\off@3=\count199
+\off@4=\count266
+\off@5=\count267
+\off@6=\count268
+\off@7=\count269
+\off@8=\count270
+\off@9=\count271
+\off@10=\count272
+\off@11=\count273
+\off@12=\count274
+\off@13=\count275
+\off@14=\count276
+\off@15=\count277
+\@maxfiles=\count278
+\@maxoutfiles=\count279
+
+Utility: `docstrip' v2.6a <2020-11-23>
+English documentation    <2020-11-23>
+
+**********************************************************
+* This program converts documented macro-files into fast *
+* loadable files by stripping off (nearly) all comments! *
+**********************************************************
+
+********************************************************
+* No Configuration file found, using default settings. *
+********************************************************
+
+(./samples.ins
+
+Generating file(s) ./sample-manuscript.tex ./sample-acmsmall.tex ./sample-acmsm
+all-submission.tex ./sample-acmsmall-biblatex.tex ./sample-acmlarge.tex ./sampl
+e-acmtog.tex ./sample-sigconf.tex ./sample-sigconf-biblatex.tex ./sample-author
+draft.tex ./sample-xelatex.tex ./sample-lualatex.tex ./sample-sigplan.tex ./sam
+ple-acmsmall-conf.tex ./sample-sigconf-i13n.tex ./sample-acmengage.tex ./sample
+-acmcp.tex 
+\openout0 = `./sample-manuscript.tex'.
+
+\openout1 = `./sample-acmsmall.tex'.
+
+\openout2 = `./sample-acmsmall-submission.tex'.
+
+\openout3 = `./sample-acmsmall-biblatex.tex'.
+
+\openout4 = `./sample-acmlarge.tex'.
+
+\openout5 = `./sample-acmtog.tex'.
+
+\openout6 = `./sample-sigconf.tex'.
+
+\openout7 = `./sample-sigconf-biblatex.tex'.
+
+\openout8 = `./sample-authordraft.tex'.
+
+\openout9 = `./sample-xelatex.tex'.
+
+\openout10 = `./sample-lualatex.tex'.
+
+\openout11 = `./sample-sigplan.tex'.
+
+\openout12 = `./sample-acmsmall-conf.tex'.
+
+\openout13 = `./sample-sigconf-i13n.tex'.
+
+\openout14 = `./sample-acmengage.tex'.
+
+\openout15 = `./sample-acmcp.tex'.
+
+
+Processing file samples.dtx (manuscript) -> sample-manuscript.tex
+                            (acmsmall) -> sample-acmsmall.tex
+                            (acmsmall-submission) -> sample-acmsmall-submission
+.tex
+                            (acmsmall-biblatex) -> sample-acmsmall-biblatex.tex
+
+                            (acmlarge) -> sample-acmlarge.tex
+                            (acmtog) -> sample-acmtog.tex
+                            (sigconf) -> sample-sigconf.tex
+                            (sigconf-biblatex) -> sample-sigconf-biblatex.tex
+                            (authordraft) -> sample-authordraft.tex
+                            (sigconf) -> sample-xelatex.tex
+                            (sigconf) -> sample-lualatex.tex
+                            (sigplan) -> sample-sigplan.tex
+                            (acmsmall-conf) -> sample-acmsmall-conf.tex
+                            (sigconf-i13n) -> sample-sigconf-i13n.tex
+                            (acmengage) -> sample-acmengage.tex
+                            (acmcp) -> sample-acmcp.tex
+
+<*manuscript|acmsmall|acmsmall-submission|acmsmall-biblatex|acmlarge|acmtog|sig
+conf|sigconf-biblatex|authordraft|sigplan|sigchi|sigchi-a|acmsmall-conf|sigconf
+-i13n|acmcp <<< . . . . . . . . . > <manuscript . >
+<acmsmall|acmsmall-conf . > <acmsmall-biblatex . > <acmsmall-submission . >
+<acmlarge . > <acmtog . > <sigconf . > <sigconf-biblatex . > <authordraft . >
+<sigplan . > <sigchi . > <sigchi-a . > <sigconf-i13n . > <sigconf-i13n . >
+<acmcp . > . . . . . % . . . . . >
+<*manuscript|sigconf|authordraft|sigplan|sigchi|sigchi-a|acmsmall-conf|sigconf-
+i13n . . . . > .
+<*acmsmall|acmsmall-submission|acmsmall-biblatex|acmlarge|acmtog|acmcp
+<acmsmall|acmsmall-submission|acmsmall-biblatex . > <acmlarge . > <acmtog . >
+<acmcp . > . . . . >
+<*manuscript|acmsmall|acmsmall-submission|acmsmall-biblatex|acmlarge|acmtog|sig
+conf|sigconf-biblatex|authordraft|sigplan|sigchi|sigchi-a|acmsmall-conf|sigconf
+-i13n|acmcp . / > . <*!acmcp > .
+<*manuscript|acmsmall|acmsmall-submission|acmlarge|acmtog|sigconf|authordraft|s
+igplan|sigchi|sigchi-a|acmsmall-conf|sigconf-i13n <!acmtog . > <!acmtog . >
+<!acmtog . > <acmtog . > > . <*acmsmall-biblatex|sigconf-biblatex . .
+<!acmsmall-biblatex . > <acmsmall-biblatex . > . . . . >
+<*manuscript|acmsmall|acmsmall-submission|acmsmall-biblatex|acmlarge|acmtog|sig
+conf|sigconf-biblatex|authordraft|sigplan|sigchi|sigchi-a|acmsmall-conf|sigconf
+-i13n|acmcp . . . . <sigconf-i13n . > <sigconf-i13n . > <sigconf-i13n . > . .
+<!acmcp . > . . . <!acmcp . > . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . > <*acmcp . . . . . . . >
+<*manuscript|acmsmall|acmsmall-submission|acmsmall-biblatex|acmlarge|acmtog|sig
+conf|sigconf-biblatex|authordraft|sigplan|sigchi|sigchi-a|acmsmall-conf|sigconf
+-i13n . . . . . . . . . > <*sigconf-i13n . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . >
+<*manuscript|acmsmall|acmsmall-submission|acmsmall-biblatex|acmlarge|acmtog|sig
+conf|sigconf-biblatex|authordraft|sigplan|sigchi|sigchi-a|acmsmall-conf|sigconf
+-i13n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . >
+<*manuscript|acmsmall|acmsmall-submission|acmsmall-biblatex|acmlarge|acmtog|sig
+conf|sigconf-biblatex|authordraft|sigplan|sigchi|sigchi-a|acmsmall-conf|sigconf
+-i13n|acmcp . . <sigconf-i13n . > <sigconf-i13n . > <sigconf-i13n . >
+<sigconf-i13n . > <sigconf-i13n . > <sigconf-i13n . > <sigconf-i13n . > >
+<*sigconf|authordraft|sigplan|acmsmall-conf|sigconf-i13n . . . . . . . >
+<*manuscript|acmsmall|acmsmall-submission|acmsmall-biblatex|acmlarge|acmtog|sig
+conf|sigconf-biblatex|authordraft|sigplan|sigchi|sigchi-a|acmsmall-conf|sigconf
+-i13n . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . <manuscript . > <acmsmall|acmsmall-conf . >
+<acmsmall-submission . > <acmlarge . > <acmtog . > <sigconf . >
+<authordraft . > <sigplan . > <sigchi . > <sigchi-a . > <sigconf-i13n . >
+<sigconf-i13n . > . . / . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . <!sigchi-a . > <sigchi-a . > . . . . . . . . . . . .
+<!sigchi-a . > <sigchi-a . > . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . / . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . <!sigchi-a . > <sigchi-a . > . . . . . .
+<!sigchi-a . > <sigchi-a . > . . . . . . . . . . . . . . . . . . . . . . . . .
+/ . . . . . . . . . . . . . . . . . . . . . . . .
+<*!(acmsmall-biblatex|sigconf-biblatex) . . . . . . . . . . . . . . . . . > .
+<*acmsmall-biblatex|sigconf-biblatex . . . . . . . . . . . . . . . . . . . > .
+/ / . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+<*!(acmsmall-biblatex|sigconf-biblatex) . >
+<*acmsmall-biblatex|sigconf-biblatex . . > . / . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . .
+<*!(acmsmall-biblatex|sigconf-biblatex) . . > .
+<*(acmsmall-biblatex|sigconf-biblatex) . > . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . > % % % <*acmengage <<< . . . . . . . . . > .
+. . . . . % . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . . . . / / . > <*acmcp . . . / .
+. . . . . . . . . . . . . . . . . . . . / . >
+Lines  processed: 1262
+Comments removed: 5
+Comments  passed: 146
+Codelines passed: 1006
+
+) ) ) 
+Here is how much of TeX's memory you used:
+ 464 strings out of 480247
+ 6321 string characters out of 5896150
+ 297924 words of memory out of 5000000
+ 18485 multiletter control sequences out of 15000+600000
+ 469259 words of font info for 28 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 17i,0n,15p,1048b,249s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+No pages of output.
+PDF statistics:
+ 0 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

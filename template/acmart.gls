@@ -1,0 +1,766 @@
+
+ \begin{theglossary} 
+
+    \makeatletter\scan@allowedfalse
+
+  \item 1.48\efill 
+ \subitem General:\ Added prologue option to xcolor\pfill \hdpindex{}{51}
+      \subsubitem Bib code cleanup (Zack Weinberg)\pfill 
+		\hdpindex{}{36}
+      \subsubitem Documentation update (siggraph)\pfill \hdpindex{}{36}
+  \item 1.49\efill 
+ \subitem General:\ New journal: DTRAP\pfill \hdpindex{}{36}
+  \item 1.53\efill 
+ \subitem General:\ New journals: PACMCGIT, TIOT, TDSCI\pfill \hdpindex{}{36}
+      \subsubitem Rearranged docs\pfill \hdpindex{}{36}
+  \item 1.54\efill 
+ \subitem General:\ Moved footnote stuff before hyperref call (Ross Moore)\pfill 
+		\hdpindex{}{36}
+  \item 1.56\efill 
+ \subitem General:\ Documented \cs  {Description}\pfill \hdpindex{}{36}
+  \item 1.57\efill 
+ \subitem General:\ Booktabs package is now the default\pfill \hdpindex{}{36}
+  \item 1.58\efill 
+ \subitem General:\ Changes in samples (Enrico Gregorio)\pfill \hdpindex{}{36}
+      \subsubitem New journal: HEALTH. TDS is renamed to TDSCI\pfill 
+		\hdpindex{}{36}
+  \item 1.60\efill 
+ \subitem \verb*+\if@ACM@urlbreakonhyphens+:\ introduced macro\pfill \hdpindex{}{37}
+    \subitem General:\ New option: urlbreakonhyphens\pfill \hdpindex{}{36}
+  \item 1.62\efill 
+ \subitem General:\ New journal: TELO\pfill \hdpindex{}{36}
+  \item 1.63\efill 
+ \subitem General:\ New journal: FACMP\pfill \hdpindex{}{36}
+      \subsubitem New journal: TQUANT\pfill \hdpindex{}{36}
+  \item 1.63a\efill 
+ \subitem General:\ Move: TQUANT to TQC\pfill \hdpindex{}{36}
+  \item 1.64\efill 
+ \subitem General:\ Putting abstract after \cs  {maketitle} now causes an error\pfill 
+		\hdpindex{}{36}
+  \item 1.65\efill 
+ \subitem General:\ New journal: DGOV\pfill \hdpindex{}{36}
+  \item 1.66\efill 
+ \subitem \verb*+\@mkauthorsaddresses+:\ Added warning for missing addresses\pfill \hdpindex{}{98}
+    \subitem \verb*+\ccsdesc@parse+:\ Added warning for missing concepts\pfill \hdpindex{}{78}
+    \subitem \verb*+\if@ACM@printacmref+:\ Added warning for longer papers\pfill \hdpindex{}{75}
+    \subitem \verb*+\keywords+:\ Added warning for missing keywords\pfill \hdpindex{}{74}
+    \subitem General:\ ACM reference format is now mandatory for papers over one page; CCS concepts and keywords are now mandatory for papers over two pages\pfill 
+		\hdpindex{}{36}
+      \subsubitem Authors' addresses are mandatory for journal articles\pfill 
+		\hdpindex{}{36}
+  \item 1.69\efill 
+ \subitem \verb*+\vspace+:\ Added the changed command to avoid grouping\pfill \hdpindex{}{114}
+  \item 1.70\efill 
+ \subitem General:\ Name change for TDS\pfill \hdpindex{}{60}
+  \item 1.71\efill 
+ \subitem General:\ Bibliography change: volume for @inproceedings is now in brackets together with series\pfill 
+		\hdpindex{}{36}
+      \subsubitem LuaTeX now uses the OTF versions of fonts\pfill 
+		\hdpindex{}{36}
+      \subsubitem Retired sigchi and sigchi-a\pfill \hdpindex{}{36}
+  \item 1.75\efill 
+ \subitem General:\ Documentation update\pfill \hdpindex{}{36}
+  \item 1.78\efill 
+ \subitem General:\ Documentation update: Word count\pfill \hdpindex{}{36}
+  \item 1.79\efill 
+ \subitem General:\ Updated indormation for TAP, TCPS, TEAC\pfill \hdpindex{}{60}
+  \item 1.80\efill 
+ \subitem General:\ Added DLT and FAC\pfill \hdpindex{}{60}
+  \item 1.82\efill 
+ \subitem General:\ Updated abbreviations and codes for several journals\pfill 
+		\hdpindex{}{60}
+  \item 1.84\efill 
+ \subitem General:\ New journals: JDS, GAMES\pfill \hdpindex{}{36}, \hdpindex{}{60}
+  \item 1.85\efill 
+ \subitem \verb*+\@mkauthors+:\ Added: acmengage\pfill \hdpindex{}{92}
+    \subitem \verb*+\@mktitle+:\ Added: acmengage\pfill \hdpindex{}{89}
+    \subitem \verb*+\@parfont+:\ Added: acmengage\pfill \hdpindex{}{108}
+    \subitem \verb*+\@printtopmatter+:\ Added: acmengage\pfill \hdpindex{}{88}
+    \subitem \verb*+\@specialsection+:\ Added: acmengage\pfill \hdpindex{}{88}
+    \subitem \verb*+\@subtitlefont+:\ Added: acmengage\pfill \hdpindex{}{90}
+    \subitem \verb*+\@titlefont+:\ Added: acmengage\pfill \hdpindex{}{90}
+    \subitem \verb*+\ACM@linecountR+:\ Added: acmengage\pfill \hdpindex{}{101}
+    \subitem \verb*+\parskip+:\ Added: acmengage\pfill \hdpindex{}{53}
+    \subitem General:\ Added CC licenses\pfill \hdpindex{}{36}
+      \subsubitem Added: acmengage\pfill \hdpindex{}{49}
+      \subsubitem New journal: JRC\pfill \hdpindex{}{60}
+    \subitem \verb*+format+:\ New format: acmengage\pfill \hdpindex{}{37}
+  \item 1.87\efill 
+ \subitem General:\ New journals: ACMJCSS, JATS, TORS\pfill \hdpindex{}{60}
+    \subitem \verb*+format+:\ New format: acmcp\pfill \hdpindex{}{37}
+  \item 1.88\efill 
+ \subitem General:\ Added ISSN for ACMJCSS\pfill \hdpindex{}{60}
+      \subsubitem Added ISSN for GAMES\pfill \hdpindex{}{60}
+      \subsubitem Added PACMNET\pfill \hdpindex{}{60}
+  \item 1.89\efill 
+ \subitem \verb*+\@printtopmatter+:\ Moved badges to top header\pfill \hdpindex{}{88}
+    \subitem General:\ Added PACMMOD\pfill \hdpindex{}{60}
+      \subsubitem Added TOPML\pfill \hdpindex{}{60}
+  \item 1.90\efill 
+ \subitem General:\ Added TOPML eISSN\pfill \hdpindex{}{60}
+  \item 1.90a\efill 
+ \subitem General:\ Changes in the sample keywords and concepts\pfill \hdpindex{}{36}
+  \item 1.92\efill 
+ \subitem General:\ Documentation update: use of `anonymous' throughout\pfill 
+		\hdpindex{}{36}
+      \subsubitem Moved hyperxmp again due to kernel update\pfill 
+		\hdpindex{}{49}
+
+  \indexspace
+
+  \item v1.00\efill 
+ \subitem General:\ First released version\pfill \hdpindex{}{36}
+  \item v1.01\efill 
+ \subitem General:\ Changed hyperref colors in screen mode (closes \url  {https://github.com/borisveytsman/acmart/issues/1})\pfill 
+		\hdpindex{}{36}
+      \subsubitem Defined ACM colors\pfill \hdpindex{}{36}
+      \subsubitem Explicitly put draft option (closes \url  {https://github.com/borisveytsman/acmart/issues/4})\pfill 
+		\hdpindex{}{39}
+      \subsubitem Set headheight to 1pc for all formats (closes \url  {https://github.com/borisveytsman/acmart/issues/5})\pfill 
+		\hdpindex{}{36}
+  \item v1.02\efill 
+ \subitem General:\ Added TOPS and TSC (closes \url  {https://github.com/borisveytsman/acmart/issues/12})\pfill 
+		\hdpindex{}{36}
+      \subsubitem Documentation changes (closes \url  {https://github.com/borisveytsman/acmart/issues/13})\pfill 
+		\hdpindex{}{36}
+  \item v1.03\efill 
+ \subitem \verb*+\@formatdoi+:\ Added macro\pfill \hdpindex{}{80}
+    \subitem \verb*+\if@ACM@authorversion+:\ Added macro\pfill \hdpindex{}{38}
+    \subitem \verb*+\maketitle+:\ Added special case of authorversion\pfill \hdpindex{}{84}
+    \subitem General:\ Added anonsuppress environment\pfill \hdpindex{}{36}
+      \subsubitem Added authorversion option (closes \url  {https://github.com/borisveytsman/acmart/issues/9})\pfill 
+		\hdpindex{}{36}
+  \item v1.04\efill 
+ \subitem \verb*+\acmArticleSeq+:\ Name change by Matthew Fluet\pfill \hdpindex{}{72}
+    \subitem \verb*+\acmDOI+:\ Name change by Matthew Fluet\pfill \hdpindex{}{73}
+    \subitem \verb*+\acmISBN+:\ Name change by Matthew Fluet\pfill \hdpindex{}{73}
+    \subitem General:\ Updated bibliography for siggraph\pfill \hdpindex{}{36}
+  \item v1.05\efill 
+ \subitem General:\ Added processing doi numbers for acmsiggraph and doi numbers for sigproc.bib\pfill 
+		\hdpindex{}{36}
+      \subsubitem Patched \cs  {setcitestyle} command; closes \url  {https://github.com/borisveytsman/acmart/issues/19}\pfill 
+		\hdpindex{}{36}
+  \item v1.06\efill 
+ \subitem \verb*+\@ACM@badge@skip+:\ Added macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\@ACM@badge@width+:\ Added macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\@ACM@title@width+:\ Added macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\@mktitle@i+:\ Added processing badges\pfill \hdpindex{}{91}
+      \subsubitem Made generic\pfill \hdpindex{}{91}
+    \subitem \verb*+\@mktitle@ii+:\ Now this macro is obsolete\pfill \hdpindex{}{91}
+    \subitem \verb*+\@mktitle@iii+:\ Added processing badges\pfill \hdpindex{}{91}
+      \subsubitem Made more generic\pfill \hdpindex{}{91}
+    \subitem \verb*+\@mktitle@iv+:\ Made more generic\pfill \hdpindex{}{91}
+    \subitem \verb*+\@printtopmatter+:\ Added processing badges\pfill \hdpindex{}{88}
+    \subitem \verb*+\@subtitlefont+:\ Added macro\pfill \hdpindex{}{90}
+    \subitem \verb*+\@titlefont+:\ Added macro\pfill \hdpindex{}{90}
+    \subitem \verb*+\acmBadgeL+:\ Added macro\pfill \hdpindex{}{74}
+    \subitem \verb*+\acmBadgeR+:\ Added macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\if@ACM@badge+:\ Added macro\pfill \hdpindex{}{73}
+  \item v1.07\efill 
+ \subitem \verb*+\maketitle+:\ Corrected a bug with abstract footnotes\pfill \hdpindex{}{84}
+      \subsubitem Corrected a bug with permssion and footnotes order\pfill 
+		\hdpindex{}{84}
+  \item v1.08\efill 
+ \subitem General:\ SIGPLAN reformatting by Matthew Fluet\pfill \hdpindex{}{36}
+      \subsubitem Typos corrected (Tobias Pape)\pfill \hdpindex{}{36}
+  \item v1.09\efill 
+ \subitem General:\ Revert SIGPLAN caption rules\pfill \hdpindex{}{36}
+  \item v1.10\efill 
+ \subitem \verb*+\maketitle+:\ Corrected a bug with doi in manuscript and author vertsion, \url  {https://github.com/borisveytsman/acmart/issues/36}\pfill 
+		\hdpindex{}{84}
+    \subitem General:\ Changes of `licensedothergov' wording\pfill \hdpindex{}{78}
+    \subitem \verb*+standardpagestyle+:\ Reversed folios location\pfill \hdpindex{}{102}
+  \item v1.11\efill 
+ \subitem General:\ Customization of ACM theorem styles and proof environment by Matthew Fluet\pfill 
+		\hdpindex{}{36}
+  \item v1.12\efill 
+ \subitem \verb*+\@marginfigure+:\ Now centering by default\pfill \hdpindex{}{58}
+    \subitem \verb*+\@margintable+:\ Now centering by default\pfill \hdpindex{}{58}
+    \subitem \verb*+\@parfont+:\ Moved to \cs  {section@raggedright}\pfill \hdpindex{}{108}
+    \subitem \verb*+\copyrightpermissionfootnoterule+:\ Added macro\pfill \hdpindex{}{53}
+    \subitem \verb*+\descriptionlabel+:\ Redefined\pfill \hdpindex{}{60}
+    \subitem \verb*+\footnoterule+:\ Made shorter\pfill \hdpindex{}{54}
+    \subitem \verb*+\if@ACM@natbib@override+:\ Added macro\pfill \hdpindex{}{38}
+    \subitem \verb*+\if@ACM@newfonts+:\ Added macro\pfill \hdpindex{}{55}
+    \subitem \verb*+\maketitle+:\ Moved thankses to copyrightpermission box\pfill \hdpindex{}{84}
+    \subitem \verb*+\section@raggedright+:\ Introduced macro\pfill \hdpindex{}{108}
+    \subitem General:\ Added graceful behavior when libertine fonts are absent\pfill 
+		\hdpindex{}{55}
+      \subsubitem Documentation updates\pfill \hdpindex{}{36}
+  \item v1.13\efill 
+ \subitem \verb*+\@mpfootnotetext+:\ Made minipage footnotes centered\pfill \hdpindex{}{49}
+    \subitem \verb*+\bibliographystyle+:\ Redefined macro\pfill \hdpindex{}{50}
+    \subitem \verb*+\bibstyle@acmauthoryear+:\ Added macro\pfill \hdpindex{}{44}
+    \subitem \verb*+\bibstyle@acmnumeric+:\ Added macro\pfill \hdpindex{}{44}
+    \subitem \verb*+\if@ACM@printfolios+:\ Added macro\pfill \hdpindex{}{75}
+    \subitem General:\ Font adjustments for acmsmall\pfill \hdpindex{}{93}
+      \subsubitem Increased font size for ACM Large\pfill 
+		\hdpindex{}{41}
+      \subsubitem Print bibliographic information by default for the proceedings\pfill 
+		\hdpindex{}{75}
+    \subitem \verb*+standardpagestyle+:\ Added headers for sigs\pfill \hdpindex{}{102}
+      \subsubitem Expanded headers for sigchi-a\pfill \hdpindex{}{102}
+      \subsubitem Suppressed folios if sig\pfill \hdpindex{}{102}
+  \item v1.14\efill 
+ \subitem \verb*+\bibstyle@acmauthoryear+:\ Moved def of \cs  {bibstyle@acmauthoryear} before use\pfill 
+		\hdpindex{}{44}
+    \subitem \verb*+\bibstyle@acmnumeric+:\ Moved def of \cs  {bibstyle@numeric} before use\pfill \hdpindex{}{44}
+    \subitem General:\ \cs  {citestyle} updates (Matthew Fluet)\pfill \hdpindex{}{36}
+      \subsubitem Patched \cs  {citestyle}\pfill \hdpindex{}{42}
+  \item v1.15\efill 
+ \subitem \verb*+\@ACM@addtoaddress+:\ Added macro\pfill \hdpindex{}{92}
+    \subitem \verb*+\@mkauthors@iii+:\ New authors system\pfill \hdpindex{}{96}
+    \subitem \verb*+\@shortauthors+:\ Introduced macro\pfill \hdpindex{}{102}
+    \subitem \verb*+\@typeset@author@bx+:\ Moved to separate macro\pfill \hdpindex{}{95}
+    \subitem \verb*+\acks+:\ Added macro\pfill \hdpindex{}{113}
+    \subitem \verb*+\affiliation+:\ Added code for author groups\pfill \hdpindex{}{70}
+    \subitem \verb*+\author+:\ Added code for author groups\pfill \hdpindex{}{69}
+    \subitem \verb*+\city+:\ Added macro\pfill \hdpindex{}{92}
+    \subitem \verb*+\country+:\ Added macro\pfill \hdpindex{}{92}
+    \subitem \verb*+\department+:\ Added macro\pfill \hdpindex{}{92}
+    \subitem \verb*+\grantnum+:\ Added macro\pfill \hdpindex{}{113}
+    \subitem \verb*+\grantsponsor+:\ Added macro\pfill \hdpindex{}{113}
+    \subitem \verb*+\if@insideauthorgroup+:\ Introduced macro\pfill \hdpindex{}{69}
+    \subitem \verb*+\institution+:\ Added macro\pfill \hdpindex{}{92}
+    \subitem \verb*+\num@authorgroups+:\ Renamed\pfill \hdpindex{}{69}
+    \subitem \verb*+\orcid+:\ Introduced macro\pfill \hdpindex{}{71}
+    \subitem \verb*+\position+:\ Added macro\pfill \hdpindex{}{92}
+    \subitem \verb*+\postcode+:\ Added macro\pfill \hdpindex{}{92}
+    \subitem \verb*+\state+:\ Added macro\pfill \hdpindex{}{92}
+    \subitem \verb*+\streetaddress+:\ Added macro\pfill \hdpindex{}{92}
+    \subitem \verb*+standardpagestyle+:\ Better handling of anonymous mode\pfill \hdpindex{}{102}
+  \item v1.16\efill 
+ \subitem \verb*+\@headfootfont+:\ Added macro\pfill \hdpindex{}{102}
+    \subitem General:\ Formatting header/footer (Matthew Fluet)\pfill \hdpindex{}{36}
+    \subitem \verb*+standardpagestyle+:\ Customize header/footer text font\pfill \hdpindex{}{102}
+  \item v1.17\efill 
+ \subitem \verb*+\@makefnmark+:\ Redefined\pfill \hdpindex{}{49}
+    \subitem \verb*+\@mkauthors+:\ TOG now uses the same authors block as other journals\pfill 
+		\hdpindex{}{92}
+    \subitem \verb*+\@mkauthors@ii+:\ Deleted\pfill \hdpindex{}{95}
+    \subitem \verb*+\@mkbibcitation+:\ Added \cs  {nobreak}\pfill \hdpindex{}{99}
+      \subsubitem Changed format for sigs\pfill \hdpindex{}{99}
+    \subitem \verb*+\acmArticle+:\ The default is now numerical\pfill \hdpindex{}{72}
+    \subitem \verb*+\acmMonth+:\ The default must be numerical. Closes \#50.\pfill \hdpindex{}{72}
+    \subitem \verb*+\acmNumber+:\ The default is now numerical\pfill \hdpindex{}{72}
+    \subitem \verb*+\acmVolume+:\ The default is now numerical\pfill \hdpindex{}{72}
+    \subitem \verb*+\acmYear+:\ The default is now numerical\pfill \hdpindex{}{72}
+    \subitem \verb*+\description+:\ Decreased indent\pfill \hdpindex{}{60}
+    \subitem \verb*+\grantnum+:\ Added url\pfill \hdpindex{}{113}
+    \subitem \verb*+\grantsponsor+:\ Renamed\pfill \hdpindex{}{113}
+    \subitem \verb*+\if@ACM@printacmref+:\ Renamed from \cs  {if@ACM@printbib}\pfill \hdpindex{}{75}
+    \subitem General:\ Slightly decreased margins for sigs\pfill \hdpindex{}{51}
+    \subitem \verb*+standardpagestyle+:\ Added paper title to sigs\pfill \hdpindex{}{102}
+  \item v1.18\efill 
+ \subitem \verb*+\@mkauthors@i+:\ Now we andify affiliations\pfill \hdpindex{}{95}
+    \subitem \verb*+\@typeset@author@line+:\ Added macro\pfill \hdpindex{}{94}
+    \subitem General:\ Natbib is now the default for all formats\pfill \hdpindex{}{36}
+  \item v1.19\efill 
+ \subitem \verb*+\@mkabstract+:\ Include 'Abstract' in PDF bookmarks (Matthew Fluet)\pfill 
+		\hdpindex{}{99}
+    \subitem \verb*+\acks+:\ Include 'Acknowledgements' in PDF bookmarks (Matthew Fluet)\pfill 
+		\hdpindex{}{113}
+    \subitem General:\ Include 'Abstract', 'Acknowledgements', and 'References' in PDF bookmarks (Matthew Fluet)\pfill 
+		\hdpindex{}{36}
+      \subsubitem Include 'References' in PDF bookmarks (Matthew Fluet)\pfill 
+		\hdpindex{}{42}
+  \item v1.20\efill 
+ \subitem \verb*+\@mkabstract+:\ Deleted spurious space\pfill \hdpindex{}{99}
+    \subitem General:\ Bug fixes for bst\pfill \hdpindex{}{36}
+  \item v1.21\efill 
+ \subitem \verb*+\showeprint+:\ Added macro\pfill \hdpindex{}{114}
+  \item v1.22\efill 
+ \subitem General:\ More bibliography changes for Aptara\pfill \hdpindex{}{36}
+  \item v1.23\efill 
+ \subitem General:\ Add PACMPL journal option\pfill \hdpindex{}{36}
+  \item v1.24\efill 
+ \subitem General:\ Add IMWUT journal option\pfill \hdpindex{}{60}
+  \item v1.25\efill 
+ \subitem General:\ Updated PACMPL\pfill \hdpindex{}{60}
+  \item v1.26\efill 
+ \subitem General:\ Corrected \cs  {shortcite} bug\pfill \hdpindex{}{36}
+      \subsubitem Documentation typos fixed (thanks to Stephen Spencer)\pfill 
+		\hdpindex{}{36}
+  \item v1.27\efill 
+ \subitem \verb*+\if@ACM@printccs+:\ Typo corrected\pfill \hdpindex{}{75}
+  \item v1.28\efill 
+ \subitem \verb*+\ccsdesc@parse+:\ Change from \cs  {to} to \cs  {textrightarrow} (Matteo Riondato)\pfill 
+		\hdpindex{}{77}
+    \subitem General:\ Corrected option natbib behavior\pfill \hdpindex{}{44}
+      \subsubitem Got rid of warnings in pdf keywords\pfill 
+		\hdpindex{}{49}
+  \item v1.29\efill 
+ \subitem \verb*+\@mkabstract+:\ Removed spurious indentation (John Wickerson)\pfill \hdpindex{}{99}
+    \subitem \verb*+\ccsdesc@parse+:\ Add spacing after bullet and around rightarrow; semicolon separators no longer in bold/italic (John Wickerson)\pfill 
+		\hdpindex{}{77}
+    \subitem General:\ Increased head to 13pt\pfill \hdpindex{}{51}
+    \subitem \verb*+standardpagestyle+:\ Corrected printfolios (Matthew Fluet)\pfill \hdpindex{}{102}
+  \item v1.30\efill 
+ \subitem \verb*+\department+:\ Added optional parameter\pfill \hdpindex{}{92}
+    \subitem General:\ Added \cs  {frenchspacing}\pfill \hdpindex{}{115}
+      \subsubitem Bibtex style now recognizes https:// in doi\pfill 
+		\hdpindex{}{36}
+      \subsubitem Switched to T1: looks like libertine has problems with \cs  {l} in OT1\pfill 
+		\hdpindex{}{55}
+      \subsubitem Updated IMWUT and PACMPL\pfill \hdpindex{}{60}
+  \item v1.31\efill 
+ \subitem \verb*+\@additionalaffiliation+:\ Added macro\pfill \hdpindex{}{70}
+    \subitem \verb*+\@mkbibcitation+:\ Disabled linebreak\pfill \hdpindex{}{99}
+    \subitem \verb*+\@startsection+:\ Added \cs  {tochangmeasure}\pfill \hdpindex{}{46}
+      \subsubitem Redefined macro\pfill \hdpindex{}{48}
+    \subitem \verb*+\@textbottom+:\ Redefined\pfill \hdpindex{}{54}
+    \subitem \verb*+\acmMonth+:\ The default now is the current month (Matteo Riondato)\pfill 
+		\hdpindex{}{72}
+    \subitem \verb*+\acmYear+:\ The default now is the current year (Matteo Riondato)\pfill 
+		\hdpindex{}{72}
+    \subitem \verb*+\additionalaffiliation+:\ Added macro\pfill \hdpindex{}{70}
+    \subitem \verb*+\l@subsection+:\ Redefined macro\pfill \hdpindex{}{48}
+    \subitem \verb*+\l@subsubsection+:\ Redefined macro\pfill \hdpindex{}{48}
+    \subitem General:\ Documentation changes\pfill \hdpindex{}{36}
+  \item v1.32\efill 
+ \subitem \verb*+\@formatdoi+:\ New doi format\pfill \hdpindex{}{80}
+    \subitem General:\ Added POMACS journal option\pfill \hdpindex{}{36}
+      \subsubitem Format siggraph is now obsolete\pfill \hdpindex{}{36}
+  \item v1.33\efill 
+ \subitem \verb*+\@ACM@addtoaddress+:\ Added obeypunctuation code\pfill \hdpindex{}{92}
+    \subitem \verb*+\@mkauthors@i+:\ Added obeypunctuation code\pfill \hdpindex{}{95}
+    \subitem \verb*+\@mkauthors@iii+:\ Added obeypunctuation code\pfill \hdpindex{}{96}
+    \subitem \verb*+\@mkauthors@iv+:\ Added obeypunctuation code\pfill \hdpindex{}{97}
+    \subitem \verb*+\@subtitlefont+:\ Added \cs  {normalsize}\pfill \hdpindex{}{90}
+    \subitem \verb*+\ACM@linecountL+:\ Renamed macro\pfill \hdpindex{}{101}
+    \subitem \verb*+\ACM@linecountR+:\ Added macro\pfill \hdpindex{}{101}
+    \subitem \verb*+\ACM@timestamp+:\ Added current page number\pfill \hdpindex{}{102}
+      \subsubitem Added macro (Michael D.~Adams)\pfill \hdpindex{}{102}
+      \subsubitem Added submission id\pfill \hdpindex{}{102}
+    \subitem \verb*+\acmSubmissionID+:\ Added macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\city+:\ Added obeypunctuation code\pfill \hdpindex{}{92}
+    \subitem \verb*+\country+:\ Added obeypunctuation code\pfill \hdpindex{}{92}
+    \subitem \verb*+\department+:\ Added obeypunctuation code\pfill \hdpindex{}{92}
+    \subitem \verb*+\if@ACM@affiliation@obeypunctuation+:\ Added macro\pfill \hdpindex{}{70}
+    \subitem \verb*+\if@ACM@authordraft+:\ Added macro\pfill \hdpindex{}{39}
+    \subitem \verb*+\if@ACM@natbib@override+:\ Deleted macro\pfill \hdpindex{}{38}
+    \subitem \verb*+\if@ACM@timestamp+:\ Added macro (Michael D.~Adams)\pfill \hdpindex{}{39}
+    \subitem \verb*+\institution+:\ Added obeypunctuation code\pfill \hdpindex{}{92}
+    \subitem \verb*+\maketitle+:\ Fixed the bug with figures on top and bottom of the title page, thanks to David Epstein\pfill 
+		\hdpindex{}{84}
+    \subitem \verb*+\position+:\ Added obeypunctuation code\pfill \hdpindex{}{92}
+    \subitem \verb*+\postcode+:\ Added obeypunctuation code\pfill \hdpindex{}{92}
+    \subitem \verb*+\state+:\ Added obeypunctuation code\pfill \hdpindex{}{92}
+    \subitem \verb*+\streetaddress+:\ Added obeypunctuation code\pfill \hdpindex{}{92}
+    \subitem General:\ Added acmart-preload-hook\pfill \hdpindex{}{36}
+      \subsubitem Added cmap and glyphtounicode\pfill \hdpindex{}{55}
+      \subsubitem BibTeX comma before articleno bug corrected\pfill 
+		\hdpindex{}{36}
+      \subsubitem BibTeX crossref bug corrected\pfill \hdpindex{}{36}
+      \subsubitem BibTeX numpages bug corrected\pfill \hdpindex{}{36}
+      \subsubitem Documentation updates\pfill \hdpindex{}{36}
+      \subsubitem Moved \cs  {citename} definition for non-natbib bibliography, so a package may redefine it\pfill 
+		\hdpindex{}{50}
+      \subsubitem Switched to Type~1 fonts for libertine even if OTF-capable engine is used (Kai Mindermann)\pfill 
+		\hdpindex{}{55}
+    \subitem \verb*+firstpagestyle+:\ Added right linecount for two-column formats\pfill \hdpindex{}{105}
+      \subsubitem Added timestamp (Michael D.~Adams)\pfill 
+		\hdpindex{}{105}
+    \subitem \verb*+standardpagestyle+:\ Added right linecount for two-column formats\pfill \hdpindex{}{102}
+      \subsubitem Added timestamp (Michael D.~Adams)\pfill 
+		\hdpindex{}{102}
+  \item v1.34\efill 
+ \subitem \verb*+\@mkbibcitation+:\ Deleted DOI from doi numbers\pfill \hdpindex{}{99}
+    \subitem \verb*+\ACM@linecount@bx+:\ Rulers now are continuous\pfill \hdpindex{}{101}
+    \subitem \verb*+\ACM@linecountL+:\ Rulers now are continuous\pfill \hdpindex{}{101}
+    \subitem \verb*+\ACM@linecountR+:\ Rulers now are continuous\pfill \hdpindex{}{101}
+    \subitem \verb*+\maketitle+:\ Added date to the bibstrip in conf proceedings\pfill \hdpindex{}{84}
+      \subsubitem Deleted `DOI' from doi numbers\pfill \hdpindex{}{84}
+      \subsubitem Rearranged bibstrip\pfill \hdpindex{}{84}
+      \subsubitem The \cs  {terms} command is now obsolete\pfill 
+		\hdpindex{}{84}
+    \subitem \verb*+\terms+:\ The \cs  {terms} command now just produces a warning\pfill 
+		\hdpindex{}{74}
+  \item v1.35\efill 
+ \subitem \verb*+\bibstyle@acmauthoryear+:\ Square brackets for author-year style\pfill \hdpindex{}{44}
+    \subitem General:\ BibTeX bug fixed: et al.\pfill \hdpindex{}{36}
+      \subsubitem If the copyright is set to usgov or rigtsretained, the price is suppressed\pfill 
+		\hdpindex{}{78}
+  \item v1.36\efill 
+ \subitem \verb*+\@ACM@authorsperrow+:\ Added macro\pfill \hdpindex{}{75}
+    \subitem \verb*+\@mkauthors@iii+:\ Added authorsperrow overrride\pfill \hdpindex{}{96}
+    \subitem \verb*+\@mkauthors@iv+:\ Added authorsperrow overrride\pfill \hdpindex{}{97}
+    \subitem \verb*+\if@ACM@authordraft+:\ Corrected typo, thanks to bargteil\pfill \hdpindex{}{39}
+    \subitem General:\ Added PACMHCI journal options\pfill \hdpindex{}{60}
+      \subsubitem Added the possibility to adjust number of author boxes per row in conference formats\pfill 
+		\hdpindex{}{36}
+  \item v1.37\efill 
+ \subitem \verb*+\description+:\ Reduce list indentation (Matthew Fluet)\pfill \hdpindex{}{60}
+    \subitem \verb*+\descriptionlabel+:\ Reduce list indentation (Matthew Fluet)\pfill \hdpindex{}{60}
+    \subitem \verb*+\normalparindent+:\ Set \cs  {normalparindent} (Matthew Fluet)\pfill \hdpindex{}{53}
+    \subitem General:\ Reduce list indentation (Matthew Fluet)\pfill \hdpindex{}{59}
+      \subsubitem Set \cs  {normalparindent}; Reduce list indentation (Matthew Fluet)\pfill 
+		\hdpindex{}{36}
+  \item v1.38\efill 
+ \subitem General:\ Increase default font size for SIGPLAN\pfill \hdpindex{}{36}, 
+		\hdpindex{}{41}
+  \item v1.39\efill 
+ \subitem \verb*+\@@authornotemark+:\ Added macro\pfill \hdpindex{}{98}
+    \subitem \verb*+\authornotemark+:\ Added macro\pfill \hdpindex{}{72}
+  \item v1.40\efill 
+ \subitem \verb*+\@copyrightowner+:\ Added new copyright version: licensedcagov\pfill \hdpindex{}{79}
+    \subitem \verb*+\@copyrightpermission+:\ Added new copyright version: licensedcagov\pfill \hdpindex{}{80}
+    \subitem \verb*+\@mkauthors@i+:\ Switched to MakeTextUppercase\pfill \hdpindex{}{95}
+    \subitem \verb*+\@parfont+:\ Switched to MakeTextUppercase\pfill \hdpindex{}{108}
+    \subitem \verb*+\ACM@linecount@bx+:\ Work around a bug in xcolor: looks like cmyk colors in boxes do not work\pfill 
+		\hdpindex{}{101}
+    \subitem \verb*+\ccdesc@parse@finish+:\ Added macro\pfill \hdpindex{}{78}
+    \subitem \verb*+\city+:\ We now do not print this even in SIG\pfill \hdpindex{}{92}
+    \subitem \verb*+\country+:\ Fixed bugs with extra spaces\pfill \hdpindex{}{92}
+    \subitem \verb*+\l@subsection+:\ Redefined macro\pfill \hdpindex{}{48}
+    \subitem \verb*+\postcode+:\ We now do not print this even in SIG\pfill \hdpindex{}{92}
+    \subitem \verb*+\state+:\ We now do not print this even in SIG\pfill \hdpindex{}{92}
+    \subitem \verb*+\streetaddress+:\ We now do not print this even in SIG\pfill \hdpindex{}{92}
+    \subitem General:\ Added `textcase' package\pfill \hdpindex{}{42}
+      \subsubitem Added heightrounded to geometry\pfill \hdpindex{}{51}
+      \subsubitem Added new copyright version: licensedcagov\pfill 
+		\hdpindex{}{36}
+      \subsubitem Added package cleveref\pfill \hdpindex{}{36}
+      \subsubitem Added Ross Moore code for glyphtounicode\pfill 
+		\hdpindex{}{55}
+      \subsubitem Bibliography changes\pfill \hdpindex{}{36}
+  \item v1.41\efill 
+ \subitem General:\ Added new badges\pfill \hdpindex{}{36}
+  \item v1.42\efill 
+ \subitem General:\ Deleted ACM badges\pfill \hdpindex{}{36}
+  \item v1.43\efill 
+ \subitem \verb*+\@startsection+:\ Added \cs  {makeatletter}\pfill \hdpindex{}{48}
+    \subitem \verb*+\country+:\ Added comma before country for journals\pfill \hdpindex{}{92}
+  \item v1.44\efill 
+ \subitem \verb*+\@acmBooktitle+:\ Added macro\pfill \hdpindex{}{68}
+    \subitem \verb*+\@acmEditors+:\ Added macro\pfill \hdpindex{}{68}
+    \subitem \verb*+\@editorsAbbrev+:\ Added macro\pfill \hdpindex{}{68}
+    \subitem \verb*+\@folioblob+:\ Suppress the blob if acmArticleSeq is empty\pfill \hdpindex{}{105}
+    \subitem \verb*+\@mkbibcitation+:\ If the paper has just one page, use `page' instead of `pages'\pfill 
+		\hdpindex{}{99}
+    \subitem \verb*+\ACM@restore@pagestyle+:\ Added macro\pfill \hdpindex{}{100}
+    \subitem \verb*+\acmArticle+:\ The default is now empty\pfill \hdpindex{}{72}
+    \subitem \verb*+\acmArticleSeq+:\ Now acmArticle might be empty\pfill \hdpindex{}{72}
+    \subitem \verb*+\acmBooktitle+:\ Added macro\pfill \hdpindex{}{68}
+    \subitem \verb*+\editor+:\ Added macro\pfill \hdpindex{}{68}
+    \subitem \verb*+\if@ACM@acmthm+:\ Added macro\pfill \hdpindex{}{37}
+    \subitem \verb*+\maketitle+:\ Empty DOI or ISBN are not printed (by Michael Ekstrand)\pfill 
+		\hdpindex{}{84}
+    \subitem General:\ Added package refcount\pfill \hdpindex{}{36}
+      \subsubitem Deleted package cleveref\pfill \hdpindex{}{36}
+      \subsubitem Put theorem defs in a separate style\pfill 
+		\hdpindex{}{36}
+  \item v1.45\efill 
+ \subitem \verb*+\@folioblob+:\ Switched \cs  {bfeseries}\cs  {sffamily} to \cs  {sffamily}\cs  {bfseries}\pfill 
+		\hdpindex{}{105}
+    \subitem \verb*+\@parfont+:\ Switched \cs  {bfeseries}\cs  {sffamily} to \cs  {sffamily}\cs  {bfseries}\pfill 
+		\hdpindex{}{108}
+    \subitem \verb*+\@titlefont+:\ Switched \cs  {bfeseries}\cs  {sffamily} to \cs  {sffamily}\cs  {bfseries}\pfill 
+		\hdpindex{}{90}
+  \item v1.46\efill 
+ \subitem \verb*+\@mkauthorsaddresses+:\ Introduced macro\pfill \hdpindex{}{98}
+    \subitem \verb*+\@mkbibcitation+:\ Added subtitle\pfill \hdpindex{}{99}
+    \subitem \verb*+\@printendtopmatter+:\ Made it \cs  {par}\cs  {bigskip} uniformly\pfill \hdpindex{}{100}
+    \subitem \verb*+\@printtopmatter+:\ Deleted rule\pfill \hdpindex{}{88}
+    \subitem \verb*+\@setauthorsaddresses+:\ Introduced macro\pfill \hdpindex{}{100}
+    \subitem \verb*+\ACM@linecount@bx+:\ Rearranged the code to get rid of spurious underfull messages (Benjamin Byholm)\pfill 
+		\hdpindex{}{101}
+    \subitem \verb*+\author+:\ Started counting authors\pfill \hdpindex{}{69}
+    \subitem \verb*+\authorsaddresses+:\ Introduced macro\pfill \hdpindex{}{71}
+    \subitem \verb*+\country+:\ Corrected spacing for institution\pfill \hdpindex{}{92}
+    \subitem \verb*+\if@ACM@acmthm+:\ Modified description\pfill \hdpindex{}{37}
+    \subitem \verb*+\liningnums+:\ Workaround for compatibility with fontspec\pfill \hdpindex{}{56}
+    \subitem \verb*+\maketitle+:\ Added authors' addresses\pfill \hdpindex{}{84}
+      \subsubitem Thankses go before authors' addresses\pfill 
+		\hdpindex{}{84}
+    \subitem \verb*+\num@authors+:\ Introduced macro\pfill \hdpindex{}{69}
+    \subitem General:\ Added etoolbox\pfill \hdpindex{}{36}
+      \subsubitem Bst file bug fixes: label width is calculated correctly\pfill 
+		\hdpindex{}{36}
+      \subsubitem Delayed hypersetup since journal options may change screen mode\pfill 
+		\hdpindex{}{49}
+      \subsubitem PACM now set screen to true\pfill \hdpindex{}{60}
+      \subsubitem Restore theorem defs to class file\pfill 
+		\hdpindex{}{36}
+  \item v1.47\efill 
+ \subitem General:\ New journal: THRI\pfill \hdpindex{}{36}
+  \item v1.48\efill 
+ \subitem \verb*+\@headfootfont+:\ Deleted unnecessary switch (Michael D.~Adams)\pfill \hdpindex{}{102}
+    \subitem \verb*+\@mkabstract+:\ Removed spurious indentation if abstract is followed by an empty line\pfill 
+		\hdpindex{}{99}
+    \subitem \verb*+\ACM@timestamp+:\ Fromatting change (Michael D.~Adams)\pfill \hdpindex{}{102}
+    \subitem \verb*+\if@ACM@review+:\ Review mode now switches on folios\pfill \hdpindex{}{37}
+    \subitem \verb*+\maketitle+:\ Added acmart and version info to pdfcreator tag\pfill \hdpindex{}{84}
+      \subsubitem Added language and doctitle attributes to PDF (Andreas Reichinger)\pfill 
+		\hdpindex{}{84}
+      \subsubitem Suppressed empty DOI (Serguei Mokhov)\pfill 
+		\hdpindex{}{84}
+    \subitem General:\ \cs  {citeyear} no longer behaves like \cs  {citeyearpar}\pfill 
+		\hdpindex{}{50}
+      \subsubitem Code prettying (Michael D.~Adams)\pfill 
+		\hdpindex{}{36}
+      \subsubitem Initial support for Biblatex (Daniel Thomas)\pfill 
+		\hdpindex{}{36}
+      \subsubitem Misc entries in the bibliography no longer produce a separate date\pfill 
+		\hdpindex{}{36}
+      \subsubitem Typos fixed (Jamie Davis)\pfill \hdpindex{}{36}
+  \item v1.50\efill 
+ \subitem \verb*+\@copyrightpermission+:\ New copyright statements for iw3c2w3[g]\pfill \hdpindex{}{80}
+  \item v1.51\efill 
+ \subitem General:\ Corrected the bug with price suppression\pfill \hdpindex{}{78}
+      \subsubitem Suppress price if the copyright is set to iw3c2w3 or iw3c2w3g\pfill 
+		\hdpindex{}{78}
+      \subsubitem XeTeX now uses OTF fonts (Joachim Breitner)\pfill 
+		\hdpindex{}{55}
+    \subitem \verb*+firstpagestyle+:\ We now use journal abbreviation for footers\pfill \hdpindex{}{105}
+    \subitem \verb*+standardpagestyle+:\ We now use journal abbreviation for footers\pfill \hdpindex{}{102}
+  \item v1.52\efill 
+ \subitem \verb*+\@copyrightowner+:\ Rewording of licenses\pfill \hdpindex{}{79}
+    \subitem \verb*+\@copyrightpermission+:\ Another rewording of copyright statements for iw3c2w3[g]\pfill 
+		\hdpindex{}{80}
+  \item v1.53\efill 
+ \subitem General:\ Added PACMCGIT, TIOT, TDSCI\pfill \hdpindex{}{60}
+  \item v1.54\efill 
+ \subitem \verb*+\@mkbibcitation+:\ Bug corrected (Ross Moore)\pfill \hdpindex{}{99}
+    \subitem \verb*+\@shortauthors+:\ Added submission id in anonymous mode\pfill \hdpindex{}{102}
+    \subitem \verb*+\ACM@NR@adjustedSectionformat+:\ Added macro\pfill \hdpindex{}{107}
+    \subitem \verb*+\ACM@NRadjust+:\ Added macro\pfill \hdpindex{}{106}
+    \subitem \verb*+\ACM@adddotafter+:\ Added macro\pfill \hdpindex{}{107}
+    \subitem \verb*+\author+:\ Added submission id in anonymous mode\pfill \hdpindex{}{69}
+    \subitem \verb*+\if@ACM@nonacm+:\ Added macro\pfill \hdpindex{}{38}
+    \subitem General:\ Added Ross's patch for sectioning\pfill \hdpindex{}{107}
+      \subsubitem Deleted indent for subsubsection\pfill 
+		\hdpindex{}{107}
+      \subsubitem XeTeX now uses T1 encoding\pfill \hdpindex{}{55}
+  \item v1.55\efill 
+ \subitem \verb*+\@mkbibcitation+:\ Bug corrected\pfill \hdpindex{}{99}
+    \subitem \verb*+\maketitle+:\ Fixes topnum\pfill \hdpindex{}{84}
+    \subitem General:\ Now we use purple color for links\pfill \hdpindex{}{49}
+      \subsubitem Table captions for SIGCHI now use the same font size as figure captions (Luis Leiva)\pfill 
+		\hdpindex{}{57}
+      \subsubitem Typo corrected (Zack Weinberg)\pfill \hdpindex{}{42}
+  \item v1.56\efill 
+ \subitem \verb*+\@marginfigure+:\ Added checking for description\pfill \hdpindex{}{58}
+    \subitem \verb*+\@mkteasers+:\ Added check for description\pfill \hdpindex{}{99}
+    \subitem \verb*+\Description+:\ Added macro\pfill \hdpindex{}{56}
+    \subitem \verb*+\acksname+:\ Added macro (Philip Quinn)\pfill \hdpindex{}{113}
+    \subitem \verb*+\ccsdesc@parse+:\ End the concepts list with a period (Philip Quinn)\pfill 
+		\hdpindex{}{77}
+    \subitem \verb*+\if@Description@present+:\ Added macro\pfill \hdpindex{}{56}
+    \subitem \verb*+\if@undescribed@images+:\ Added macro\pfill \hdpindex{}{56}
+    \subitem General:\ Looks like XeTeX requires explicit monotype font declaration\pfill 
+		\hdpindex{}{55}
+      \subsubitem Make two-column layouts flush (Philip Quinn)\pfill 
+		\hdpindex{}{51}
+  \item v1.57\efill 
+ \subitem \verb*+\ACM@origbaselinestretch+:\ Added check whether the user changed \cs  {baselinestretch}\pfill 
+		\hdpindex{}{115}
+    \subitem \verb*+\author+:\ Added warning if \cs  {author} has comma\pfill \hdpindex{}{69}
+    \subitem \verb*+\email+:\ Added warning if \cs  {author} has comma\pfill \hdpindex{}{71}
+    \subitem \verb*+\if@ACM@balance+:\ Added macro\pfill \hdpindex{}{38}
+    \subitem \verb*+\vspace+:\ Added warning\pfill \hdpindex{}{114}
+  \item v1.58\efill 
+ \subitem \verb*+\@dblfloat+:\ Deleted spurious \cs  {vspace} warning\pfill \hdpindex{}{58}
+    \subitem \verb*+\@marginfigure+:\ Deleted spurious \cs  {vspace} warning\pfill \hdpindex{}{58}
+    \subitem \verb*+\@margintable+:\ Deleted spurious \cs  {vspace} warning\pfill \hdpindex{}{58}
+    \subitem \verb*+\@mkbibcitation+:\ Deleted spurious \cs  {vspace} warning\pfill \hdpindex{}{99}
+    \subitem \verb*+\@printendtopmatter+:\ Deleted spurious \cs  {vspace} warning\pfill \hdpindex{}{100}
+    \subitem \verb*+\@sidebar+:\ Deleted spurious \cs  {vspace} warning\pfill \hdpindex{}{58}
+    \subitem \verb*+\maketitle+:\ Original \cs  {vspace} inside \cs  {maketitle}\pfill \hdpindex{}{84}
+    \subitem \verb*+\vspace+:\ Preserved old versions as \cs  {@vspace@orig} and \cs  {@vspace@orig}\pfill 
+		\hdpindex{}{114}
+    \subitem General:\ Added HEALTH. TDSCI is renamed to TDS\pfill \hdpindex{}{60}
+      \subsubitem Suppressed \cs  {addtocounter} in pdf subject\pfill 
+		\hdpindex{}{49}
+  \item v1.59\efill 
+ \subitem \verb*+\acmConference+:\ Setting \cs  {@ACM@journal@bibstrip}\pfill \hdpindex{}{68}
+    \subitem \verb*+\acmJournal+:\ Setting \cs  {@ACM@journal@bibstrip}\pfill \hdpindex{}{68}
+    \subitem \verb*+\if@ACM@journal@bibstrip+:\ Introduced macro\pfill \hdpindex{}{40}
+    \subitem \verb*+firstpagestyle+:\ Added logic for conference papers using journal format\pfill 
+		\hdpindex{}{105}
+      \subsubitem Moved page styles to \cs  {AtBeginDocument}\pfill 
+		\hdpindex{}{105}
+    \subitem \verb*+standardpagestyle+:\ Added logic for conference papers using journal format\pfill 
+		\hdpindex{}{102}
+      \subsubitem Moved page styles to \cs  {AtBeginDocument}\pfill 
+		\hdpindex{}{102}
+  \item v1.60\efill 
+ \subitem \verb*+\@headfootfont+:\ Moved to footnotesize\pfill \hdpindex{}{102}
+  \item v1.61\efill 
+ \subitem \verb*+\@typeset@author@bx+:\ Added \cs  {normalbaselines}\pfill \hdpindex{}{95}
+  \item v1.64\efill 
+ \subitem \verb*+\ACM@linecount@bx+:\ Bug fix: made the spacing on the left and the right size equal\pfill 
+		\hdpindex{}{101}
+    \subitem \verb*+\if@ACM@maketitle@typeset+:\ Introduced macro\pfill \hdpindex{}{60}
+    \subitem \verb*+\maketitle+:\ Added a switch setting to show that \cs  {maketitle} is typeset\pfill 
+		\hdpindex{}{84}
+  \item v1.65\efill 
+ \subitem \verb*+\@mkauthorsaddresses+:\ Deleted cs{@addpunct}\pfill \hdpindex{}{98}
+  \item v1.66\efill 
+ \subitem \verb*+\@specialsection+:\ Suppress warnings about \cs  {vspace}\pfill \hdpindex{}{88}
+    \subitem General:\ Patching algorithm and algorithm* to prevent spurious space warnings\pfill 
+		\hdpindex{}{56}
+  \item v1.67\efill 
+ \subitem \verb*+\@parfont+:\ Deleted redefinitions of sections\pfill \hdpindex{}{108}
+    \subitem \verb*+\@specialsection+:\ Paragraph inside group does not print its argument. Added a bugfix\pfill 
+		\hdpindex{}{88}
+    \subitem General:\ Patching lstlisting and lstlisting* to prevent spurious space warnings\pfill 
+		\hdpindex{}{56}
+  \item v1.68\efill 
+ \subitem \verb*+\@specialsection+:\ Deleted grouping altogether\pfill \hdpindex{}{88}
+    \subitem General:\ New command for unindent paras\pfill \hdpindex{}{107}
+  \item v1.69\efill 
+ \subitem \verb*+\@printendtopmatter+:\ Deleted grouping\pfill \hdpindex{}{100}
+    \subitem \verb*+\@specialsection+:\ Changed dot to colon for sigplan\pfill \hdpindex{}{88}
+    \subitem \verb*+\ACM@linecountR+:\ Do not increase numbers in one column format\pfill \hdpindex{}{101}
+    \subitem \verb*+\ccsdesc@parse+:\ Use math right arrow in text\pfill \hdpindex{}{77}
+    \subitem General:\ No dots for unindented paragraphs\pfill \hdpindex{}{107}
+  \item v1.71\efill 
+ \subitem \verb*+\l@subsubsection+:\ Bug fixed (thanks to Andrew Black)\pfill \hdpindex{}{48}
+  \item v1.72\efill 
+ \subitem \verb*+\author+:\ Added \cs  {detokenize} (Kuldeep S. Meel)\pfill \hdpindex{}{69}
+    \subitem \verb*+\maketitle+:\ Do not andify authors for pdf metadata (Scott Pakin)\pfill 
+		\hdpindex{}{84}
+  \item v1.73\efill 
+ \subitem \verb*+\@ACM@checkaffil+:\ Added macro\pfill \hdpindex{}{94}
+    \subitem \verb*+\@ACM@resetaffil+:\ Added macro\pfill \hdpindex{}{94}
+    \subitem \verb*+\@mkauthors@i+:\ Check the presence of required elements for affiliations\pfill 
+		\hdpindex{}{95}
+    \subitem \verb*+\@mkauthors@iii+:\ Check the presence of required elements for affiliations\pfill 
+		\hdpindex{}{96}
+    \subitem \verb*+\@mkauthors@iv+:\ Check the presence of required elements for affiliations\pfill 
+		\hdpindex{}{97}
+    \subitem \verb*+\city+:\ Check the presence in affil\pfill \hdpindex{}{92}
+    \subitem \verb*+\country+:\ Check the presence in affil\pfill \hdpindex{}{92}
+    \subitem \verb*+\if@ACM@citypresent+:\ Added macro\pfill \hdpindex{}{94}
+    \subitem \verb*+\if@ACM@countrypresent+:\ Added macro\pfill \hdpindex{}{94}
+    \subitem \verb*+\if@ACM@instpresent+:\ Added macro\pfill \hdpindex{}{94}
+    \subitem \verb*+\institution+:\ Check the presence in affil\pfill \hdpindex{}{92}
+    \subitem \verb*+\maketitle+:\ Do not check again the presense of address fields\pfill 
+		\hdpindex{}{84}
+    \subitem General:\ Patching minted and minted* to prevent spurious space warnings\pfill 
+		\hdpindex{}{56}
+  \item v1.74\efill 
+ \subitem General:\ Changed the order of font loading\pfill \hdpindex{}{55}
+  \item v1.75\efill 
+ \subitem \verb*+\@ACM@checkaffil+:\ Changed warning to error for country\pfill \hdpindex{}{94}
+    \subitem \verb*+\@beginmaketitlehook+:\ Introduced macro\pfill \hdpindex{}{84}
+    \subitem \verb*+\AtBeginMaketitle+:\ Introduced macro\pfill \hdpindex{}{84}
+    \subitem \verb*+\maketitle+:\ Added \cs  {@beginmaketitlehook}\pfill \hdpindex{}{84}
+  \item v1.76\efill 
+ \subitem \verb*+\author+:\ Added code for orcid links\pfill \hdpindex{}{69}
+    \subitem \verb*+\if@ACM@pbalance+:\ Added macro\pfill \hdpindex{}{38}
+    \subitem \verb*+\maketitle+:\ Put \cs  {par} inside group for keywords\pfill \hdpindex{}{84}
+    \subitem \verb*+\orcid+:\ Added code for orcid links\pfill \hdpindex{}{71}
+    \subitem General:\ Moved hyperxmp before hyperref, see \url  {https://github.com/borisveytsman/acmart/issues/425}\pfill 
+		\hdpindex{}{49}
+    \subitem \verb*+standardpagestyle+:\ Fixed bug with no line numbers for nonacm\pfill \hdpindex{}{102}
+  \item v1.77\efill 
+ \subitem \verb*+\@mkauthorsaddresses+:\ New separator of institutions\pfill \hdpindex{}{98}
+  \item v1.78\efill 
+ \subitem \verb*+\@mkauthors@i+:\ Unboxing \cs  {mktitle@bx}\pfill \hdpindex{}{95}
+    \subitem \verb*+\@mkauthors@iii+:\ Unboxing \cs  {mktitle@bx}\pfill \hdpindex{}{96}
+    \subitem \verb*+\@mkteasers+:\ Unboxing \cs  {mktitle@bx}\pfill \hdpindex{}{99}
+    \subitem \verb*+\@printtopmatter+:\ Added processing the overflowing title box\pfill \hdpindex{}{88}
+    \subitem \verb*+\@specialsection+:\ Again suppressed \cs  {vspace} warning\pfill \hdpindex{}{88}
+  \item v1.82\efill 
+ \subitem \verb*+\anon+:\ Introduced macro\pfill \hdpindex{}{83}
+  \item v1.83\efill 
+ \subitem \verb*+\@mkabstract+:\ I13n\pfill \hdpindex{}{99}
+    \subitem \verb*+\@mktitle@i+:\ Added \cs  {translatedtitle} and \cs  {translatedsubtitle}\pfill 
+		\hdpindex{}{91}
+    \subitem \verb*+\@mktitle@iii+:\ Added \cs  {translatedtitle} and \cs  {translatedsubtitle}\pfill 
+		\hdpindex{}{91}
+    \subitem \verb*+\@mktitle@iv+:\ Added \cs  {translatedtitle} and \cs  {translatedsubtitle}\pfill 
+		\hdpindex{}{91}
+    \subitem \verb*+\@mktranslatedabstract+:\ Added macro\pfill \hdpindex{}{99}
+    \subitem \verb*+\@mktranslatedkeywords+:\ Added macro\pfill \hdpindex{}{71}
+    \subitem \verb*+\@translatedabstracts+:\ Added macro\pfill \hdpindex{}{46}
+    \subitem \verb*+\@translatedkeywords+:\ Added macro\pfill \hdpindex{}{46}
+    \subitem \verb*+\@translatedsubtitle+:\ Added macro\pfill \hdpindex{}{46}
+    \subitem \verb*+\@translatedtitle+:\ Added macro\pfill \hdpindex{}{45}
+    \subitem \verb*+\ACM@lang@check+:\ Added macro\pfill \hdpindex{}{45}
+    \subitem \verb*+\ACM@languages+:\ Introduced macro\pfill \hdpindex{}{39}
+    \subitem \verb*+\maketitle+:\ I13n\pfill \hdpindex{}{84}
+    \subitem \verb*+\translatedkeywords+:\ Added macro\pfill \hdpindex{}{46}
+    \subitem \verb*+\translatedsubtitle+:\ Added macro\pfill \hdpindex{}{46}
+    \subitem \verb*+\translatedtitle+:\ Added macro\pfill \hdpindex{}{46}
+    \subitem General:\ Use babel for multilanguage papers\pfill \hdpindex{}{44}
+    \subitem \verb*+translatedabstract+:\ Added macro\pfill \hdpindex{}{46}
+  \item v1.85\efill 
+ \subitem \verb*+\@acmengagemetadata+:\ Introduced macro\pfill \hdpindex{}{84}
+    \subitem \verb*+\@copyrightowner+:\ Added CC licenses\pfill \hdpindex{}{79}
+    \subitem \verb*+\@copyrightpermission+:\ Added CC licenses\pfill \hdpindex{}{80}
+    \subitem \verb*+\@typesetengagemetadata+:\ Introduced macro\pfill \hdpindex{}{100}
+    \subitem \verb*+\if@ACM@engage+:\ Introduced macro\pfill \hdpindex{}{40}
+    \subitem \verb*+\maketitle+:\ acmengage\pfill \hdpindex{}{84}
+    \subitem \verb*+\setcctype+:\ Added macro\pfill \hdpindex{}{79}
+    \subitem \verb*+\setengagemetadata+:\ Introduced macro\pfill \hdpindex{}{84}
+    \subitem General:\ Added CC licenses\pfill \hdpindex{}{78}
+  \item v1.86\efill 
+ \subitem \verb*+\country+:\ Error if country is empty\pfill \hdpindex{}{92}
+    \subitem \verb*+standardpagestyle+:\ Special treatment of ACM Engage materials\pfill \hdpindex{}{102}
+  \item v1.87\efill 
+ \subitem \verb*+\@ACM@color@frame+:\ Introduced macro\pfill \hdpindex{}{76}
+    \subitem \verb*+\@ACM@copyright@check@cc+:\ Added macro\pfill \hdpindex{}{80}
+    \subitem \verb*+\@copyrightpermission+:\ CC licenses now are allowed only for non-acm or ACM engage publications\pfill 
+		\hdpindex{}{80}
+    \subitem \verb*+\@mkauthors@i+:\ Special treatment for acmcp\pfill \hdpindex{}{95}
+    \subitem \verb*+\@mktitle@i+:\ Special treatment for acmcp\pfill \hdpindex{}{91}
+    \subitem \verb*+\acmArticleType+:\ Introduced macro\pfill \hdpindex{}{76}
+    \subitem \verb*+\acmCodeDataLink+:\ Added possibility to have several links\pfill \hdpindex{}{77}
+      \subsubitem Introduced macro\pfill \hdpindex{}{77}
+    \subitem \verb*+\acmDataLink+:\ Introduced macro\pfill \hdpindex{}{77}
+      \subsubitem Now this is the same as the code link\pfill 
+		\hdpindex{}{77}
+    \subitem \verb*+\if@ACM@acmcp+:\ Introduced macro\pfill \hdpindex{}{40}
+    \subitem \verb*+\maketitle+:\ CC license are allowed for non-acm publications\pfill \hdpindex{}{84}
+    \subitem \verb*+\set@ACM@acmcpbox+:\ Added macro\pfill \hdpindex{}{87}
+    \subitem General:\ Added `framed' package for acmcp\pfill \hdpindex{}{42}
+      \subsubitem No numbering sections for ACMCP\pfill 
+		\hdpindex{}{109}
+    \subitem \verb*+firstpagestyle+:\ Special treatment for acmcp\pfill \hdpindex{}{105}
+    \subitem \verb*+standardpagestyle+:\ Special treatment of ACMCP\pfill \hdpindex{}{102}
+  \item v1.88\efill 
+ \subitem \verb*+\@mktitle@i+:\ Moved down title for acmcp\pfill \hdpindex{}{91}
+  \item v1.89\efill 
+ \subitem \verb*+\@ACM@acmcp@delta+:\ Added dimen\pfill \hdpindex{}{42}
+    \subitem \verb*+\@ACM@badge@skip+:\ Redefined macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\@ACM@color@frame+:\ Added saving the position of the bottom\pfill \hdpindex{}{76}
+    \subitem \verb*+\@acmBadgeL+:\ Introduced macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\@acmBadgeR+:\ Introduced macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\@mktitle@i+:\ Moved badges to top header\pfill \hdpindex{}{91}
+      \subsubitem Moved up acmcp title\pfill \hdpindex{}{91}
+    \subitem \verb*+\@mktitle@iii+:\ Moved badges to top header\pfill \hdpindex{}{91}
+    \subitem \verb*+\acmBadge+:\ Added macro\pfill \hdpindex{}{74}
+    \subitem \verb*+\acmBadgeL+:\ Redefined macro\pfill \hdpindex{}{74}
+    \subitem \verb*+\acmBadgeR+:\ Redefined macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\if@ACM@badge+:\ Deleted macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\set@ACM@acmcpbox+:\ Added logo\pfill \hdpindex{}{87}
+      \subsubitem Added zref position of the bottom\pfill 
+		\hdpindex{}{87}
+    \subitem General:\ Added `zref-savepos' package for acmcp\pfill \hdpindex{}{42}
+    \subitem \verb*+firstpagestyle+:\ Moved badges here\pfill \hdpindex{}{105}
+  \item v1.91\efill 
+ \subitem \verb*+\acmContributions+:\ Restored the macro\pfill \hdpindex{}{77}
+    \subitem \verb*+standardpagestyle+:\ Redesigned ACMP labels\pfill \hdpindex{}{102}
+  \item v1.93\efill 
+ \subitem General:\ Added PACMSE journal option\pfill \hdpindex{}{36}
+  \item v2.00\efill 
+ \subitem \verb*+\@ACM@copyright@check@cc+:\ Moved to warning\pfill \hdpindex{}{80}
+    \subitem \verb*+\@copyrightowner+:\ Changed wording\pfill \hdpindex{}{79}
+    \subitem \verb*+\@copyrightpermission+:\ Rewrote wording\pfill \hdpindex{}{80}
+    \subitem \verb*+\@folio@ht+:\ Obsoleted macro\pfill \hdpindex{}{105}
+    \subitem \verb*+\@folio@max+:\ Obsoleted macro\pfill \hdpindex{}{105}
+    \subitem \verb*+\@folio@voffset+:\ Obsoleted macro\pfill \hdpindex{}{105}
+    \subitem \verb*+\@folio@wd+:\ Obsoleted macro\pfill \hdpindex{}{105}
+    \subitem \verb*+\@folioblob+:\ Obsoleted macro\pfill \hdpindex{}{105}
+    \subitem \verb*+\acmPrice+:\ Deleted macro\pfill \hdpindex{}{73}
+    \subitem \verb*+\maketitle+:\ Added ``ACM'' for papers\pfill \hdpindex{}{84}
+      \subsubitem Deleted acmPrice\pfill \hdpindex{}{84}
+    \subitem General:\ Deleted acmPrice\pfill \hdpindex{}{78}
+    \subitem \verb*+firstpagestyle+:\ Deleted blobs\pfill \hdpindex{}{105}
+  \item v2.01\efill 
+ \subitem \verb*+\acmPrice+:\ Now the macro produces a warning\pfill \hdpindex{}{73}
+
+ \end{theglossary}

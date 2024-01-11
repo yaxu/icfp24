@@ -1,0 +1,59 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}User's guide}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Installation}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Invocation and options}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Top matter}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Top matter of ACM Engage materials}{19}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}ACM cover page}{20}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Internationalization}{21}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Algorithms}{22}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Figures and tables}{22}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Descriptions of images}{23}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Theorems}{23}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Online-only and offline-only material}{24}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}Note about anonymous mode}{24}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Acknowledgments}{25}{subsection.2.13}%
+\contentsline {subsection}{\numberline {2.14}Bibliography}{25}{subsection.2.14}%
+\contentsline {subsubsection}{\numberline {2.14.1}Processing using Bib\TeX }{25}{subsubsection.2.14.1}%
+\contentsline {subsubsection}{\numberline {2.14.2}Processing using Bib\LaTeX }{29}{subsubsection.2.14.2}%
+\contentsline {subsection}{\numberline {2.15}Colors}{29}{subsection.2.15}%
+\contentsline {subsubsection}{\numberline {2.15.1}Manual bibliography}{30}{subsubsection.2.15.1}%
+\contentsline {subsection}{\numberline {2.16}Other notable packages and typographic remarks}{30}{subsection.2.16}%
+\contentsline {subsection}{\numberline {2.17}Counting words}{31}{subsection.2.17}%
+\contentsline {subsection}{\numberline {2.18}Creative Commons licenses for ACM publications}{31}{subsection.2.18}%
+\contentsline {subsection}{\numberline {2.19}Disabled or forbidden commands}{31}{subsection.2.19}%
+\contentsline {subsection}{\numberline {2.20}Notes for wizards}{32}{subsection.2.20}%
+\contentsline {subsection}{\numberline {2.21}Currently supported publications}{32}{subsection.2.21}%
+\contentsline {subsection}{\numberline {2.22}A note about \texttt {sigchi-a} format}{34}{subsection.2.22}%
+\contentsline {section}{\numberline {3}Implementation}{36}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Identification}{36}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Preload hook}{36}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Options}{36}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Setting switches}{40}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Loading the base class and package}{41}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Citations}{42}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Internationalization}{44}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Sectioning}{46}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Hyperxmp and hyperref}{49}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Other packages}{51}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Paper size and paragraphing}{51}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}Fonts}{55}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}Image descriptions}{56}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Floats}{57}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Lists}{59}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Top-matter data}{60}{subsection.3.16}%
+\contentsline {subsection}{\numberline {3.17}Concepts system}{77}{subsection.3.17}%
+\contentsline {subsection}{\numberline {3.18}Copyright system}{78}{subsection.3.18}%
+\contentsline {subsection}{\numberline {3.19}Maketitle hook}{84}{subsection.3.19}%
+\contentsline {subsection}{\numberline {3.20}ACM Engage top matter}{84}{subsection.3.20}%
+\contentsline {subsection}{\numberline {3.21}Typesetting top matter}{84}{subsection.3.21}%
+\contentsline {subsection}{\numberline {3.22}Headers and Footers}{100}{subsection.3.22}%
+\contentsline {subsection}{\numberline {3.23}Sectioning}{106}{subsection.3.23}%
+\contentsline {subsection}{\numberline {3.24}TOC lists}{109}{subsection.3.24}%
+\contentsline {subsection}{\numberline {3.25}Theorems}{109}{subsection.3.25}%
+\contentsline {subsection}{\numberline {3.26}Balancing columns}{112}{subsection.3.26}%
+\contentsline {subsection}{\numberline {3.27}Acknowledgments}{113}{subsection.3.27}%
+\contentsline {subsection}{\numberline {3.28}Conditional typesetting}{114}{subsection.3.28}%
+\contentsline {subsection}{\numberline {3.29}Additional bibliography commands}{114}{subsection.3.29}%
+\contentsline {subsection}{\numberline {3.30}Index}{114}{subsection.3.30}%
+\contentsline {subsection}{\numberline {3.31}End of Class}{114}{subsection.3.31}%

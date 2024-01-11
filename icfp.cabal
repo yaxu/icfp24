@@ -1,0 +1,11 @@
+cabal-version:      2.4
+name:               icfp
+version:            0.1.0.0
+executable icfp
+    main-is:          Diagram.hs
+    hs-source-dirs:
+                   src
+    other-modules:    Pattern
+    build-depends:    base, colour, cairo
+    default-language: Haskell2010
+    ghc-options: -pgmL markdown-unlit -Wall -XDeriveFunctor
