@@ -110,6 +110,7 @@
 \usepackage{xcolor}
 \usepackage{color}
 \usepackage{fancyvrb}
+\usepackage{framed}
 
 %%
 %% end of the preamble, start of the body of the document source.
@@ -118,7 +119,7 @@
 %%
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
-\title{FRP for you and me}
+\title[TidalCycles: Continuous and Discrete Patterns of FRP]{TidalCycles: Continuous and Discrete Patterns of Functional Reactive Programming}
 
 %%
 %% The "author" command and its associated commands are used to define
@@ -215,7 +216,8 @@
 \newcommand{\VerbBar}{|}
 \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-\newenvironment{Shaded}{}{}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
 \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}

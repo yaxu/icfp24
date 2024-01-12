@@ -13,15 +13,13 @@ cyclesperinch = 1
 
 l = 0.008
 lh = l/2
-linewidth = 0.008
+linewidth = 0.01
 rowheight = 0.25
-gap = l
+gap = l*2
 cellheight = rowheight-gap
 cyclewidth = 0.4
   
-dashed = C.setDash [0.05, 0.025] 0
-
-pat = stack [atom "red", interlace [atom "green", atom "blue"]]
+dashed = C.setDash [0.011, 0.025] 0
 
 intersects a b = begin c < end c
   where c = intersect a b
@@ -30,7 +28,7 @@ layer :: [Event a] -> [[Event a]]
 layer []     = []
 layer (e:[]) = [[e]]
 layer (e:es) = check $ layer es
-  where fits e' es' = not $ or $ catMaybes $ map (\e'' -> intersects <$> (whole e'') <*> (whole e')) es'
+  where fits e' es' = not $ or $ map (\e'' -> intersects (active e'') (active e')) es'
         check []       = [[e]]
         check (es':xs) | fits e es' = (e:es'):xs
                        | otherwise = es':(check xs)
@@ -39,6 +37,8 @@ main = do renderPattern 12 "fig1.pdf" fig1
           renderPattern 12 "fig2.pdf" fig2
           renderPattern 12 "fig3.pdf" fig3
           renderPattern 12 "fig4.pdf" fig4
+          renderPattern 12 "fig5.pdf" fig5
+          -- renderPattern 12 "fig6.pdf" fig6
 
 renderPattern cycles name pat =
   do let events = query pat $ TimeSpan 0 (toRational cycles)
@@ -46,11 +46,74 @@ renderPattern cycles name pat =
          layercount = length eventses
      C.withPDFSurface ("figures/" ++ name)  (72*cyclewidth*cycles) (72*rowheight*(fromIntegral layercount)) $ \surf ->
        C.renderWith surf $ do
-         C.scale (cyclesperinch*72*cyclewidth) (cyclesperinch*72)
+         C.scale (cyclesperinch*72) (cyclesperinch*72)
          C.setOperator C.OperatorOver
          sequence $ intercalate [C.translate 0 rowheight] $ eventses
 
+drawEvent (Event Nothing ts v) = drawEvent $ Event (Just ts) ts v
 drawEvent (Event (Just (TimeSpan wb we)) (TimeSpan ab ae) v) =
+  do let colour = fromMaybe grey $ readColourName v
+         RGB r g b = toSRGB colour
+         wb', we', ab', ae' :: Double
+         wb' = fromRational wb * cyclewidth
+         we' = fromRational we * cyclewidth
+         ab' = fromRational ab * cyclewidth
+         ae' = fromRational ae * cyclewidth
+         lwb = wb' + lh
+         lwe = we' - lh - gap
+         lab = ab' + lh
+         lae = ae' - lh - gap
+
+     C.save
+
+     -- when (wb' < ab' || we' > ab') $ do
+     --   C.setSourceRGB rl gl bl
+     --   C.rectangle lwb 0 (we'-lwb) cellheight
+     --   C.fill
+     let rectx = (ab'+lh)
+         rectw = ae'-ab'-l-gap
+         gradientStart = fromRational $ 1 - 0.8*((ab-wb) / (we - wb))
+         gradientStop = fromRational $ 1 - 0.8*((ae-wb) / (we - wb))
+     -- C.liftIO $ putStrLn $ show gradientStart ++ " -> " ++ show gradientStop
+     C.withLinearPattern rectx 0 (rectx+rectw) 0 $ \pat -> do
+       C.save
+       C.patternAddColorStopRGBA pat 0 r g b gradientStart
+       C.patternAddColorStopRGBA pat 1 r g b gradientStop
+       C.patternSetFilter pat C.FilterFast
+       C.setSource pat
+       C.rectangle rectx (0+lh) rectw (cellheight-l)
+       C.fill
+       C.restore
+         
+
+     -- top line
+     C.setSourceRGB 0 0 0
+     C.setLineWidth linewidth
+     C.setLineCap C.LineCapRound
+     C.moveTo lab lh
+     C.lineTo lae lh
+     C.stroke
+
+     -- bottom line
+     C.moveTo lab cellheight
+     C.lineTo lae cellheight
+     C.stroke
+
+     C.setDash [] 0
+     when (wb' < ab') dashed
+     C.moveTo lab lh
+     C.lineTo lab cellheight
+     C.stroke
+
+     C.setDash [] 0
+     when (we' > ae') $ dashed
+     C.moveTo lae lh
+     C.lineTo lae cellheight
+     C.stroke
+
+     C.restore
+
+drawEventWithWhole (Event (Just (TimeSpan wb we)) (TimeSpan ab ae) v) =
   do let colour = fromMaybe grey $ readColourName v
          RGB r g b = toSRGB colour
          RGB rl gl bl = toSRGB $ blend 0.3 colour white
@@ -93,7 +156,7 @@ drawEvent (Event (Just (TimeSpan wb we)) (TimeSpan ab ae) v) =
      C.stroke
 
      C.setDash [] 0
-     when (we' > ae') $ C.setDash [0.025, 0.025] 0
+     when (we' > ae') dashed
      C.moveTo lwe lh
      C.lineTo lwe cellheight
      C.stroke
@@ -116,22 +179,3 @@ drawEvent (Event (Just (TimeSpan wb we)) (TimeSpan ab ae) v) =
        C.lineTo lwe cellheight
        C.stroke
      C.restore
-{-
-     C.setDash [] 4
-     C.moveTo 0 0
-     C.lineTo 100 0
-     C.stroke
-     C.moveTo 100 0
-     C.setDash [4,4] 4
-     C.lineTo 150 0
-     C.stroke
-
-     C.setDash [] 0
-     C.moveTo 0 50
-     C.lineTo 100 50
-     C.stroke
-     C.moveTo 100 50
-     C.setDash [4,4] 4
-     C.lineTo 150 50
-     C.stroke
--}
