@@ -1,7 +1,12 @@
-# Representing patterns
+---
+bibliography: src/Alpaca.json
+csl: acm-sig-proceedings.csl
+...
+
+# Representing patterns in Functiona Reactive Programming
 
 Functional Reactive Programming (FRP) was first implemented by Conal Elliot in
-Fran [Functional Reactive Animation; @cite], based on a formal definition of
+Fran [@elliottFunctionalReactiveAnimation1997], based on a formal definition of
 behaviour as a continuous function of time. Popular implementations of FRP
 (e.g. the Elm language) have followed which have instead opted for discrete
 rather than continuous semantics. The following introduces an approach that
@@ -9,38 +14,40 @@ supports both discrete and continuous time, developed and popularised over the
 past ten years in the TidalCycles system, which is designed for creative, live
 exploration of musical (and other) patterns.
 
-In the following I will step through the process of building a representation,
-taking Elliot's definition of behaviour in Fran as a worthy starting point, and
-the definition of pattern in TidalCycles (with some simplifications) as an
-endpoint. This is done in a practical, literate programming style, using the
-Haskell programming language. Example patterns are visualised, generated
-directly from the code in the paper. We will end up with a representation that
-is slightly simplified to but conceptually the same as that used in the
-TidalCycles programming language.
+In the following I will step us through the process of building a
+representation, taking Elliot's definition of behaviour in Fran as a worthy
+starting point, and the definition of pattern in TidalCycles as an end point
+(with some simplifications). This is done in a practical, literate programming
+style, using the Haskell programming language. Example patterns are visualised,
+generated directly from the code in this paper.
 
-Our starting point is the following `Behaviour` type from Fran:
+Our starting point then, is the `Behaviour` type from Fran:
 
 ```haskell ignore
 type Time = Double
 type Behaviour a = Time -> [a]
 ```
 
-This principled start represents behaviours as functions of time, or in other
-words, time-varying values. There might be more than one value active at a
-particular point in time, hence the function returns a list of values.
+This represents behaviours elegantly as functions of time, or in other words,
+time-varying values. There might be more than one value active at a particular
+point in time, hence these behaviours returns a list of values. Fran also
+defines an event model, but here we focus entirely on pure behaviours that have
+no state beyond time.
 
 ## Rational time
 
-According to Elliot, `Time` in FRP should be _real_, therefore having arbitrary
-time precision, without building a notion of samplerate into the representation
-itself. In practice, Fran uses double precision, floating point numbers for
-representing time. Floating point numbers are certainly efficient, but leave us
-with the problem of how to deal with floating point errors in time calculations.
+According to Elliot, time in FRP should be _real_, therefore having arbitrary
+levels of precision, without building a notion of samplerate into the
+representation itself. In practice, Fran uses double-precision floating point
+numbers for representing time. Floating point numbers are certainly efficient,
+but leave us with the problem of how to deal with associated errors in time
+calculations, for instance by building some tolerance into comparison between
+values.
 
-To avoid floating point headaches, here I instead use rational time as a
-practical alternative. Unlike floating point numbers, this means ratios that are
-common in media arts can be properly represented, e.g. durations of 1/3 for
-triplets in music, and 1/24 for frame frequencies in video animation.
+To avoid such floating point headaches, here I instead use rational time as a
+practical alternative. Unlike floating point numbers, this will support ratios
+that are common in media arts, e.g. durations of 1/3 for triplets in music, and
+1/24 for frame frequencies in video animation.
 
 ```haskell ignore
 type Time = Rational
@@ -49,21 +56,21 @@ type Pattern a = Time -> [a]
 
 But this raises a question -- what are these numbers a ratio _of_? The answer is
 metric cycles, which in music have particular meaning depending on the musical
-tradition at play. For example in Western music, metric cycles are referred to
-as measures or bars, and in Indian music as the nuanced structures of Tala
-cycles. In TidalCycles they are simply referred as cycles. The integer timeline
-(i.e., those ratios of `1`) marks out the endings and beginnings of successive
-cycles.
+tradition at play. For example in Western classical music, metric cycles are
+referred to as measures or bars, and in Indian classical music as the nuanced
+structures of Tala cycles. In TidalCycles they are simply referred as cycles,
+and the integer timeline (i.e., those ratios of `1`) marks out the endings and
+beginnings of successive cycles. For example, a ratio of 4/10 would fall halfway
+through the third cycle, counting from zero.
 
-I have also renamed the `Behaviour` type to `Pattern` in the above. This both
-differentiates our type from Elliot's, and supports later discussion relating
-this representation with the long history of pattern-making.
+I have also renamed the `Behaviour` type to `Pattern` in the above. This
+differentiates our type from Elliot's, and connects our type with the long
+history of pattern-making.
 
 ## Timespans and events
 
-Next, in order to support discrete events, I introduce the concept of events
-with time*spans* to our model. In the following, a timespan represents the time
-during which a given event is active.
+Next, in order to support discrete events, I introduce time*spans* to the
+representation.
 
 ```haskell ignore
 data TimeSpan = TimeSpan {begin :: Time, end :: Time}
@@ -71,29 +78,30 @@ data Event a = Event {active :: TimeSpan, value :: a}
 type Pattern a = TimeSpan -> [Event a]
 ```
 
-To support this, I have also changed the `Pattern` type to be a function of
-timespans, rather than single time values. This is so the pattern can be queried
-with contiguous timespans, thereby avoiding any chance of missing events that
-might otherwise fall between queries of single time values.
+A pattern is now a function of timespans to events, and each event is active for
+a timespan. A pattern can then be queried with contiguous timespans, avoiding
+any chance of missing events that that would fall between queries of single time
+values.
 
 However, we also need to take into account that an event might well not fit
-within the timespan of a given query. We often need to know which part of an
-event is active within the queried timespan, particularly whether it started
-before and/or continues beyond that timespan. For this reason, I add another
-field to our Event datatype called `whole`, representing the whole timespan of
-the event, which will either be the same as or greater than the `active` part,
-but should always include it. We still use the `active` timespan to see when an
-event is active during the query, but can compare it with the `whole` to check
-whether the event is a fragment of a larger timespan.
+within the timespan of a given query. We often need to know _which_ part of an
+event is active within the queried timespan, and whether it started before
+and/or continues beyond that timespan. For this reason, I add another field to
+our Event datatype called `whole`.
 
 ```haskell ignore
 data Event a = Event {whole :: TimeSpan, active :: TimeSpan, value :: a}
 ```
 
+The ``whole` timespan of the event must either be the same as or greater than
+the `active` part, and always include it. We use the `active` timespan to see
+when an event is active during the query, but can compare it with the `whole` to
+check whether the event is a fragment of a larger timespan.
+
 Now the `Pattern` type can represent discrete events, but it would be best if it
-could still represent continuous values. Fundamentally, we define a continuous
-value as one which does not have a discrete beginning and end. So, we just need
-to make the 'whole' optional, using Haskell's standard `Maybe` type.
+could still represent continuous values. Fundamentally, a continuous value is
+one which does not have a discrete beginning and end. So to represent them, we
+simply need to make the 'whole' optional, using Haskell's standard `Maybe` type.
 
 ```haskell ignore
 data Event a = Event {whole :: Maybe TimeSpan, active :: TimeSpan, value :: a}
@@ -102,11 +110,7 @@ data Event a = Event {whole :: Maybe TimeSpan, active :: TimeSpan, value :: a}
 We can now tell when an event is continuous, because its `whole` is set to
 `Nothing`.
 
-## Complete pattern representation
-
-The representation in types is now complete, with the following a basis for
-representing values that support both continuous and discrete time, within the
-same datatype.
+The types are now complete, as follows.
 
 ```haskell
 type Time = Rational
@@ -120,9 +124,9 @@ data Pattern a = Pattern {query :: TimeSpan -> [Event a]}
 
 # Constructing patterns
 
-How does this work in practice? For continuous patterns, we simply
-sample a value at the halfway point of the queried timespan. For
-example, a sinewave:
+How does this work in practice? Let's have a look at how simple patterns are
+defined. For continuous patterns, we simply sample a value at the halfway point
+of the queried timespan. For example, a sinewave with a period of one cycle:
 
 ```haskell
 sinewave :: Pattern Double
@@ -131,9 +135,12 @@ sinewave = Pattern $ \timespan ->
     where t timespan = begin timespan + ((end timespan - begin timespan) / 2)
 ```
 
-For discrete patterns however, we need to supply both the whole and part. The
-following `atom` function returns a pattern that repeats an event with the given
-value every cycle.
+Discrete patterns need to calculate both the whole and active timespans for each
+event. The following `atom` function returns a pattern that repeats the given
+value as a discrete event, every cycle. To do this it splits the query at cycle
+boundaries, and sets the whole to be the beginning and end of the cycle for each
+event. A note on terminology - in Indian music, the `sam` is the beginning of a
+cycle (and end of the previous one).
 
 ```haskell
 sam, nextSam :: Rational -> Rational
@@ -157,8 +164,10 @@ atom value = Pattern $ map (\timespan ->
 
 # Composing patterns
 
-We can compose a list of patterns into a new one, simply by passing queries on
-to each pattern. This assumes that we want the patterns to run concurrently:
+Patterns are not too much use until they are composed together, and because they
+are functions, we of course need to do functional composition, by making a new
+function that calls two or more existing ones. First, here is a straightforward
+`stack` function for composing patterns together so that they run concurrently:
 
 ```haskell
 stack :: [Pattern a] -> Pattern a
@@ -172,14 +181,15 @@ fig1 = stack [atom "pink", atom "purple"]
 ![](../figures/fig1.pdf)\
 
 The above visualises twelve cycles of the pattern over time, from left to right.
-Slightly more complicated is combining patterns in sequence, over time. Patterns
-have infinite length, so we are not able to simply concatenate them. Instead, we
-can 'interlace' their cycles.
+Combining patterns in sequence over time is a little complicated because
+patterns have infinite length, so we are not able to simply concatenate
+them. Instead, we can 'interlace' their cycles.
 
 ```haskell
 splitQueries :: Pattern a -> Pattern a
 splitQueries pat =  Pattern $ concatMap (query pat) . splitSpan
 
+-- Take a cycle from each pattern in turn
 interlace :: [Pattern a] -> Pattern a
 interlace pats = splitQueries $ Pattern f
   where f timespan = query (_late offset pat) timespan
@@ -187,6 +197,11 @@ interlace pats = splitQueries $ Pattern f
                     cyc = sam $ begin timespan
                     pat = pats !! floor (cyc `mod'` (n :: Rational))
                     offset = cyc - sam (begin timespan / n)
+
+-- The same as interlace, but a cycle from each pattern is taken, interlaced
+-- and squashed into a single cycle.
+interlaceCycle :: [Pattern a] -> Pattern a
+interlaceCycle pats = _fast (fromIntegral $ length pats) $ interlace pats
 ```
 
 Let's look at a visualisation of the first six cycles of a pattern composed
@@ -202,22 +217,20 @@ fig2 = interlace [atom "pink", atom "purple"]
 We can now combine stacks and interlacements:
 
 ```haskell
-fig3 = stack [atom "red", interlace [atom "pink", atom "purple"]]
+fig3 = stack [atom "red",
+              interlace [atom "pink", interlace [atom "purple", atom "orange"]]
+             ]
 ```
 
 ![](../figures/fig3.pdf)\
 
 # Manipulating time
 
-A good thing about pure FRP is that it is possible to manipulate time simply by
-making a new pattern function that simply adjusts the time query that is passed
-to an existing pattern function. However, because our representation has
-timespans in two places -- in the query and the events that result -- we must be
-careful to adjust both. We therefore require two functions for every time
-manipulation; one to adjust the query, and another to adjust the result, so that
-the event timespan are still active within the queried timespan. To facilitate
-this, I first define some utility functions for working with query and event
-time:
+A good thing about pure FRP is that it is possible to manipulate time by making
+a new function that simply adjusts the time query that is passed to another
+function. However our representation has timespans in two places -- the query
+and in the events that result. To facilitate the corrent manipulation of both, I
+define some utility functions for working with query and event time:
 
 ```haskell
 withSpanTime :: (Time -> Time) -> TimeSpan -> TimeSpan
@@ -236,10 +249,11 @@ withTime :: (Time -> Time) -> (Time -> Time) -> Pattern a -> Pattern a
 withTime fa fb pat = withEventTime fa $ withQueryTime fb pat
 ```
 
-It is then straightforward to define functions for making patterned events
-faster/slower, or early/late. For example to make a pattern 'faster', query time
-is divided and event time is multiplied by a given factor. This queries a wider
-window, and 'squashes' the results back into the requested timespan.
+It is then straightforward to define functions for making patterned events to be
+faster or slower, or shifting them in time to be early or late. For example to
+make a pattern 'faster', query time is divided and event time is multiplied by a
+given factor. This queries a wider window, and 'squashes' the results back into
+the requested timespan.
 
 ```haskell
 _fast, _slow, _late, _early :: Time -> Pattern a -> Pattern a
@@ -254,45 +268,43 @@ We can apply visualisation in understanding how events can become broken up. If
 cycle?
 
 ```haskell
-fig4 = interlace [atom "red", _slow 3 $ atom "yellow"]
+fig4 = interlace [atom "red", _slow 3 $ atom "green"]
 ```
 
 ![](../figures/fig4.pdf)\
 
-The dashed lines indicate where wholes begin before, or end after, the active
-event timespans. From the above we can see that the three cycles of each yellow
-event has been broken into parts of one cycle each, and interlaced with the
-single-cycle red events.
+The jagged edges indicate where wholes begin before, or end after, the active
+event timespans. From the above we can see that each green event has been broken
+into parts of one cycle each, and interlaced with the single-cycle red events.
 
 ## Combining patterns with monadic binds
 
-On these foundations, a domain specific language can be built. The above
-functions are prefixed by `_`, because they are considered internal functions
-and not part of the end-user interface. The reason for this is that TidalCycles
-follows the principle that _everything_ is a pattern. Accordingly, we require
-functions with the following time signature:
+The above functions are prefixed by `_`, because they are considered internal
+functions and not part of the end-user interface. The reason for this is that
+TidalCycles follows the principle that _everything_ is a pattern. Accordingly,
+we require functions with the following time signature, where the time factor is
+also patterned:
 
 ```haskell ignore
 fast, slow, late, early :: Pattern Time -> Pattern a -> Pattern a
 ```
 
-How do we implement these functions? We somehow need a way to combine patterns
-of time with the patterns that are having their time structures
+To implement these functions, we somehow need a way to compose patterns of time
+together with the patterns that are having their time structures
 manipulated. This is where Haskell's monadic bind (`>>=`) comes into view, which
 does what we want - it lifts functional arguments into contexts such as
-patterns. This clarifies our problem as one of how to define patterns as an
-instance of Haskell's standard Monad typeclass. In particular, we need to define
-the bind operator `>>=` for patterns, with the type signature `Pattern a -> (a
--> Pattern b) -> Pattern b`. So, what should this bind do?
+patterns. Our problem is now clarified as one of how to define the `Pattern`
+type as an instance of Haskell's standard Monad typeclass. In particular, we
+need to define the bind operator `>>=` for patterns, with the type signature
+`Pattern a -> (a -> Pattern b) -> Pattern b`. So, what should this bind do?
 
 Certainly, our bind will need to create a new pattern, which as we saw above,
 will be a function from timespans to events. This function will need to be
 composed of other pattern functions, in particular the 'outer' pattern given as
 the first argument, and 'inner' pattern resulting from the second argument. The
-biggest question here is deciding how to deal with the timespans of events when
-composing pairs of patterns together. The two active timespans are
-straightforwardly combined, as the intersection. There is however ambiguity in
-how the two 'whole' timespans should be combined.
+big remaining question is, how do we deal with the event timespans? The two
+active timespans are straightforwardly combined, as the intersection. There is
+ambiguity, however, in how the two 'whole' timespans should be combined.
 
 [//]: <> (In the bind, the resulting pattern function will pass on its query to the 'outer' pattern function, then for each event returned by it, pass the event's value to the binding function, then use the event's active timespan to query the 'inner' pattern returned by the binding function. The events returned by the 'inner' pattern should then fall within the timespan of the outer events.)
 
@@ -300,12 +312,12 @@ how the two 'whole' timespans should be combined.
 
 This ambiguity comes down to where the pattern _structure_ should come from -
 should we preserve the structure of the outer pattern, the inner pattern, or a
-combination of the two? In the case of the above `fast` function and its `slow`,
-`late` and `early` friends, we can say that we will always want to preserve the
+combination of the two? In the case of the `fast` function (and its `slow`,
+`late` and `early` friends), we can say that we will always want to preserve the
 structure of the inner patterns - the patterns of values which come second in
 the function arguments. This is because we only want to transform a value
 pattern using a time pattern, but not otherwise change the value pattern's
-structure. (We will see examples of functions that do change the structure of
+structure. (We will see examples of functions that _do_ change the structure of
 events later.)
 
 The following shows how inner, outer and 'mix' binds can be implemented.
@@ -328,12 +340,11 @@ mixBind = bindWith (liftA2 intersect)
 ```
 
 In `mixBind`, the intersection of the event wholes is taken, therefore combining
-the time structures of the two patterns in what we term a 'mix' bind.
-
-Alternatively, `innerBind` uses the time structure of 'whole' timespans from the
-inner pattern, and `outerBind` from the outer pattern. The default bind in the
-`Monad` instance is set as a `mixBind`. I also define an `Applicative` instance
-based on this bind.
+the time structures of the two patterns in what we term a 'mix'
+bind. Alternatively, `innerBind` uses the time structure of 'whole' timespans
+from the inner pattern, and `outerBind` from the outer pattern. The default bind
+in the `Monad` instance is set as a `mixBind`. I also define an `Applicative`
+instance based on this bind:
 
 ```haskell
 instance Monad Pattern where
@@ -363,7 +374,7 @@ early = patternify_x _early
 ```
 
 ```haskell
-fig5 = stack [fast (atom 2) p,
+fig5 = stack [fast (atom 1.5) p,
               slow (atom 2) p
              ]
     where p = interlace [atom "red", atom "purple"]
@@ -371,16 +382,37 @@ fig5 = stack [fast (atom 2) p,
 
 ![](../figures/fig5.pdf)\
 
-From the above we can see that for the second pattern in the stack transformed
-with `slow`, because the `atom 2` repeats every cycle, the resulting events get
-split at cycle boundaries. However they keep their whole timespans with a
-duration of two cycles, and so the overall time structure is maintained. In the
-visualisations, events are filled with a gradient relative to the whole
-timespans, to make this a little clearer.
+From the above we can see that the resulting events get split at cycle
+boundaries, because the factor patterns (`atom 1.5` and `atom 2`) repeat every
+cycle. However more importantly the whole timespans are preserved, and so the
+overall time structure is maintained.^[Note that events are filled with a
+gradient relative to the whole timespans, to visualise which active part of a
+whole timespan each event represents.]
+
+We could avoid this fragmentation by using a continuous rather than a discrete
+value in our pattern of factors:
+
+```haskell
+-- hold a value steady
+hold :: a -> Pattern a
+hold v = Pattern $ \ts -> [Event Nothing ts v]
+
+fig5b = stack [fast (hold 1.5) p,
+               slow (hold 2) p
+              ]
+    where p = interlace [atom "red", atom "purple"]
+```
+
+![](../figures/fig5b.pdf)\
+
+The fragmentation in the first example doesn't matter in practice though, and we
+can consider the two resulting patterns to be equivalent.
 
 # Masking and restructuring patterns
 
-So far we have manipulated time, but not structure.
+So far we have looked at the results of inner binds, where the structure of a
+transformed pattern is preserved. Lets now compare the use of inner and outer
+binds, and in particular their use in masking or restructuring pattern.
 
 ```haskell
 silence :: Pattern a
@@ -391,11 +423,30 @@ _ifpat True p = p
 _ifpat False _ = silence
 
 mask :: Pattern Bool -> Pattern a -> Pattern a
-mask bp p = bp `outerBind` \b -> _ifpat b p
+mask bp p = bp `innerBind` \b -> _ifpat b p
 
 struct :: Pattern Bool -> Pattern a -> Pattern a
-struct bp p = bp `innerBind` \b -> _ifpat b p
+struct bp p = bp `outerBind` \b -> _ifpat b p
 ```
+
+The bind is the only difference between these two functions, but they have very
+different practical uses. `struct` is used to impose a new structure on a
+pattern, where as `mask` maintains the structure, but masks off some parts of
+it.
+
+```haskell
+fig6 = stack [
+    pat,
+    struct (interlaceCycle [atom True, atom True, atom False, atom True]) pat,
+    mask (interlaceCycle [atom True, atom True, atom False, atom True]) pat
+  ]
+  where pat = interlaceCycle [atom "red", atom "purple"]
+```
+
+Again the red events are fragmented in the above use of `mask`, but this does
+not matter in practice, as the whole timespans are maintained.
+
+![](../figures/fig6.pdf)\
 
 \appendix
 
@@ -410,3 +461,5 @@ import Data.Fixed
 intersect :: TimeSpan -> TimeSpan -> TimeSpan
 intersect (TimeSpan b e) (TimeSpan b' e') = TimeSpan (max b b') (min e e')
 ```
+
+# References

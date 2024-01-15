@@ -1,26 +1,24 @@
-\section{Representing patterns}\label{representing-patterns}
+\section{Representing patterns in Functiona Reactive
+Programming}\label{representing-patterns-in-functiona-reactive-programming}
 
 Functional Reactive Programming (FRP) was first implemented by Conal
-Elliot in Fran {[}Functional Reactive Animation; @cite{]}, based on a
-formal definition of behaviour as a continuous function of time. Popular
-implementations of FRP (e.g.~the Elm language) have followed which have
-instead opted for discrete rather than continuous semantics. The
-following introduces an approach that supports both discrete and
-continuous time, developed and popularised over the past ten years in
-the TidalCycles system, which is designed for creative, live exploration
-of musical (and other) patterns.
+Elliot in Fran {[}1{]}, based on a formal definition of behaviour as a
+continuous function of time. Popular implementations of FRP (e.g.~the
+Elm language) have followed which have instead opted for discrete rather
+than continuous semantics. The following introduces an approach that
+supports both discrete and continuous time, developed and popularised
+over the past ten years in the TidalCycles system, which is designed for
+creative, live exploration of musical (and other) patterns.
 
-In the following I will step through the process of building a
+In the following I will step us through the process of building a
 representation, taking Elliot's definition of behaviour in Fran as a
-worthy starting point, and the definition of pattern in TidalCycles
-(with some simplifications) as an endpoint. This is done in a practical,
+worthy starting point, and the definition of pattern in TidalCycles as
+an end point (with some simplifications). This is done in a practical,
 literate programming style, using the Haskell programming language.
-Example patterns are visualised, generated directly from the code in the
-paper. We will end up with a representation that is slightly simplified
-to but conceptually the same as that used in the TidalCycles programming
-language.
+Example patterns are visualised, generated directly from the code in
+this paper.
 
-Our starting point is the following \texttt{Behaviour} type from Fran:
+Our starting point then, is the \texttt{Behaviour} type from Fran:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -29,25 +27,26 @@ Our starting point is the following \texttt{Behaviour} type from Fran:
 \end{Highlighting}
 \end{Shaded}
 
-This principled start represents behaviours as functions of time, or in
-other words, time-varying values. There might be more than one value
-active at a particular point in time, hence the function returns a list
-of values.
+This represents behaviours elegantly as functions of time, or in other
+words, time-varying values. There might be more than one value active at
+a particular point in time, hence these behaviours returns a list of
+values. Fran also defines an event model, but here we focus entirely on
+pure behaviours that have no state beyond time.
 
 \subsection{Rational time}\label{rational-time}
 
-According to Elliot, \texttt{Time} in FRP should be \emph{real},
-therefore having arbitrary time precision, without building a notion of
-samplerate into the representation itself. In practice, Fran uses double
-precision, floating point numbers for representing time. Floating point
-numbers are certainly efficient, but leave us with the problem of how to
-deal with floating point errors in time calculations.
+According to Elliot, time in FRP should be \emph{real}, therefore having
+arbitrary levels of precision, without building a notion of samplerate
+into the representation itself. In practice, Fran uses double-precision
+floating point numbers for representing time. Floating point numbers are
+certainly efficient, but leave us with the problem of how to deal with
+associated errors in time calculations, for instance by building some
+tolerance into comparison between values.
 
-To avoid floating point headaches, here I instead use rational time as a
-practical alternative. Unlike floating point numbers, this means ratios
-that are common in media arts can be properly represented,
-e.g.~durations of 1/3 for triplets in music, and 1/24 for frame
-frequencies in video animation.
+To avoid such floating point headaches, here I instead use rational time
+as a practical alternative. Unlike floating point numbers, this will
+support ratios that are common in media arts, e.g.~durations of 1/3 for
+triplets in music, and 1/24 for frame frequencies in video animation.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -59,21 +58,21 @@ frequencies in video animation.
 But this raises a question -- what are these numbers a ratio \emph{of}?
 The answer is metric cycles, which in music have particular meaning
 depending on the musical tradition at play. For example in Western
-music, metric cycles are referred to as measures or bars, and in Indian
-music as the nuanced structures of Tala cycles. In TidalCycles they are
-simply referred as cycles. The integer timeline (i.e., those ratios of
-\texttt{1}) marks out the endings and beginnings of successive cycles.
+classical music, metric cycles are referred to as measures or bars, and
+in Indian classical music as the nuanced structures of Tala cycles. In
+TidalCycles they are simply referred as cycles, and the integer timeline
+(i.e., those ratios of \texttt{1}) marks out the endings and beginnings
+of successive cycles. For example, a ratio of 4/10 would fall halfway
+through the third cycle, counting from zero.
 
 I have also renamed the \texttt{Behaviour} type to \texttt{Pattern} in
-the above. This both differentiates our type from Elliot's, and supports
-later discussion relating this representation with the long history of
-pattern-making.
+the above. This differentiates our type from Elliot's, and connects our
+type with the long history of pattern-making.
 
 \subsection{Timespans and events}\label{timespans-and-events}
 
-Next, in order to support discrete events, I introduce the concept of
-events with time\emph{spans} to our model. In the following, a timespan
-represents the time during which a given event is active.
+Next, in order to support discrete events, I introduce time\emph{spans}
+to the representation.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -83,23 +82,17 @@ represents the time during which a given event is active.
 \end{Highlighting}
 \end{Shaded}
 
-To support this, I have also changed the \texttt{Pattern} type to be a
-function of timespans, rather than single time values. This is so the
-pattern can be queried with contiguous timespans, thereby avoiding any
-chance of missing events that might otherwise fall between queries of
-single time values.
+A pattern is now a function of timespans to events, and each event is
+active for a timespan. A pattern can then be queried with contiguous
+timespans, avoiding any chance of missing events that that would fall
+between queries of single time values.
 
 However, we also need to take into account that an event might well not
-fit within the timespan of a given query. We often need to know which
-part of an event is active within the queried timespan, particularly
+fit within the timespan of a given query. We often need to know
+\emph{which} part of an event is active within the queried timespan, and
 whether it started before and/or continues beyond that timespan. For
 this reason, I add another field to our Event datatype called
-\texttt{whole}, representing the whole timespan of the event, which will
-either be the same as or greater than the \texttt{active} part, but
-should always include it. We still use the \texttt{active} timespan to
-see when an event is active during the query, but can compare it with
-the \texttt{whole} to check whether the event is a fragment of a larger
-timespan.
+\texttt{whole}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -107,11 +100,17 @@ timespan.
 \end{Highlighting}
 \end{Shaded}
 
+The `\texttt{whole} timespan of the event must either be the same as or
+greater than the \texttt{active} part, and always include it. We use the
+\texttt{active} timespan to see when an event is active during the
+query, but can compare it with the \texttt{whole} to check whether the
+event is a fragment of a larger timespan.
+
 Now the \texttt{Pattern} type can represent discrete events, but it
 would be best if it could still represent continuous values.
-Fundamentally, we define a continuous value as one which does not have a
-discrete beginning and end. So, we just need to make the `whole'
-optional, using Haskell's standard \texttt{Maybe} type.
+Fundamentally, a continuous value is one which does not have a discrete
+beginning and end. So to represent them, we simply need to make the
+`whole' optional, using Haskell's standard \texttt{Maybe} type.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -122,12 +121,7 @@ optional, using Haskell's standard \texttt{Maybe} type.
 We can now tell when an event is continuous, because its \texttt{whole}
 is set to \texttt{Nothing}.
 
-\subsection{Complete pattern
-representation}\label{complete-pattern-representation}
-
-The representation in types is now complete, with the following a basis
-for representing values that support both continuous and discrete time,
-within the same datatype.
+The types are now complete, as follows.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -143,9 +137,10 @@ within the same datatype.
 
 \section{Constructing patterns}\label{constructing-patterns}
 
-How does this work in practice? For continuous patterns, we simply
-sample a value at the halfway point of the queried timespan. For
-example, a sinewave:
+How does this work in practice? Let's have a look at how simple patterns
+are defined. For continuous patterns, we simply sample a value at the
+halfway point of the queried timespan. For example, a sinewave with a
+period of one cycle:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -156,9 +151,13 @@ example, a sinewave:
 \end{Highlighting}
 \end{Shaded}
 
-For discrete patterns however, we need to supply both the whole and
-part. The following \texttt{atom} function returns a pattern that
-repeats an event with the given value every cycle.
+Discrete patterns need to calculate both the whole and active timespans
+for each event. The following \texttt{atom} function returns a pattern
+that repeats the given value as a discrete event, every cycle. To do
+this it splits the query at cycle boundaries, and sets the whole to be
+the beginning and end of the cycle for each event. A note on terminology
+- in Indian music, the \texttt{sam} is the beginning of a cycle (and end
+of the previous one).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -184,9 +183,11 @@ repeats an event with the given value every cycle.
 
 \section{Composing patterns}\label{composing-patterns}
 
-We can compose a list of patterns into a new one, simply by passing
-queries on to each pattern. This assumes that we want the patterns to
-run concurrently:
+Patterns are not too much use until they are composed together, and
+because they are functions, we of course need to do functional
+composition, by making a new function that calls two or more existing
+ones. First, here is a straightforward \texttt{stack} function for
+composing patterns together so that they run concurrently:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -204,15 +205,16 @@ run concurrently:
 \includegraphics{../figures/fig1.pdf}\\
 
 The above visualises twelve cycles of the pattern over time, from left
-to right. Slightly more complicated is combining patterns in sequence,
-over time. Patterns have infinite length, so we are not able to simply
-concatenate them. Instead, we can `interlace' their cycles.
+to right. Combining patterns in sequence over time is a little
+complicated because patterns have infinite length, so we are not able to
+simply concatenate them. Instead, we can `interlace' their cycles.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \OtherTok{splitQueries ::} \DataTypeTok{Pattern}\NormalTok{ a }\OtherTok{{-}\textgreater{}} \DataTypeTok{Pattern}\NormalTok{ a}
 \NormalTok{splitQueries pat }\OtherTok{=}  \DataTypeTok{Pattern} \OperatorTok{$} \FunctionTok{concatMap}\NormalTok{ (query pat) }\OperatorTok{.}\NormalTok{ splitSpan}
 
+\CommentTok{{-}{-} Take a cycle from each pattern in turn}
 \OtherTok{interlace ::}\NormalTok{ [}\DataTypeTok{Pattern}\NormalTok{ a] }\OtherTok{{-}\textgreater{}} \DataTypeTok{Pattern}\NormalTok{ a}
 \NormalTok{interlace pats }\OtherTok{=}\NormalTok{ splitQueries }\OperatorTok{$} \DataTypeTok{Pattern}\NormalTok{ f}
   \KeywordTok{where}\NormalTok{ f timespan }\OtherTok{=}\NormalTok{ query (\_late offset pat) timespan}
@@ -220,6 +222,11 @@ concatenate them. Instead, we can `interlace' their cycles.
 \NormalTok{                    cyc }\OtherTok{=}\NormalTok{ sam }\OperatorTok{$}\NormalTok{ begin timespan}
 \NormalTok{                    pat }\OtherTok{=}\NormalTok{ pats }\OperatorTok{!!} \FunctionTok{floor}\NormalTok{ (cyc }\OtherTok{\textasciigrave{}mod\textquotesingle{}\textasciigrave{}}\NormalTok{ (}\OtherTok{n ::} \DataTypeTok{Rational}\NormalTok{))}
 \NormalTok{                    offset }\OtherTok{=}\NormalTok{ cyc }\OperatorTok{{-}}\NormalTok{ sam (begin timespan }\OperatorTok{/}\NormalTok{ n)}
+
+\CommentTok{{-}{-} The same as interlace, but a cycle from each pattern is taken, interlaced}
+\CommentTok{{-}{-} and squashed into a single cycle.}
+\OtherTok{interlaceCycle ::}\NormalTok{ [}\DataTypeTok{Pattern}\NormalTok{ a] }\OtherTok{{-}\textgreater{}} \DataTypeTok{Pattern}\NormalTok{ a}
+\NormalTok{interlaceCycle pats }\OtherTok{=}\NormalTok{ \_fast (}\FunctionTok{fromIntegral} \OperatorTok{$} \FunctionTok{length}\NormalTok{ pats) }\OperatorTok{$}\NormalTok{ interlace pats}
 \end{Highlighting}
 \end{Shaded}
 
@@ -240,7 +247,9 @@ We can now combine stacks and interlacements:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fig3 }\OtherTok{=}\NormalTok{ stack [atom }\StringTok{"red"}\NormalTok{, interlace [atom }\StringTok{"pink"}\NormalTok{, atom }\StringTok{"purple"}\NormalTok{]]}
+\NormalTok{fig3 }\OtherTok{=}\NormalTok{ stack [atom }\StringTok{"red"}\NormalTok{,}
+\NormalTok{              interlace [atom }\StringTok{"pink"}\NormalTok{, interlace [atom }\StringTok{"purple"}\NormalTok{, atom }\StringTok{"orange"}\NormalTok{]]}
+\NormalTok{             ]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -248,15 +257,12 @@ We can now combine stacks and interlacements:
 
 \section{Manipulating time}\label{manipulating-time}
 
-A good thing about pure FRP is that it is possible to manipulate time
-simply by making a new pattern function that simply adjusts the time
-query that is passed to an existing pattern function. However, because
-our representation has timespans in two places -- in the query and the
-events that result -- we must be careful to adjust both. We therefore
-require two functions for every time manipulation; one to adjust the
-query, and another to adjust the result, so that the event timespan are
-still active within the queried timespan. To facilitate this, I first
-define some utility functions for working with query and event time:
+A good thing about pure FRP is that it is possible to manipulate time by
+making a new function that simply adjusts the time query that is passed
+to another function. However our representation has timespans in two
+places -- the query and in the events that result. To facilitate the
+corrent manipulation of both, I define some utility functions for
+working with query and event time:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -278,10 +284,10 @@ define some utility functions for working with query and event time:
 \end{Shaded}
 
 It is then straightforward to define functions for making patterned
-events faster/slower, or early/late. For example to make a pattern
-`faster', query time is divided and event time is multiplied by a given
-factor. This queries a wider window, and `squashes' the results back
-into the requested timespan.
+events to be faster or slower, or shifting them in time to be early or
+late. For example to make a pattern `faster', query time is divided and
+event time is multiplied by a given factor. This queries a wider window,
+and `squashes' the results back into the requested timespan.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -299,26 +305,25 @@ lasts longer than a cycle?
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fig4 }\OtherTok{=}\NormalTok{ interlace [atom }\StringTok{"red"}\NormalTok{, \_slow }\DecValTok{3} \OperatorTok{$}\NormalTok{ atom }\StringTok{"yellow"}\NormalTok{]}
+\NormalTok{fig4 }\OtherTok{=}\NormalTok{ interlace [atom }\StringTok{"red"}\NormalTok{, \_slow }\DecValTok{3} \OperatorTok{$}\NormalTok{ atom }\StringTok{"green"}\NormalTok{]}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics{../figures/fig4.pdf}\\
 
-The dashed lines indicate where wholes begin before, or end after, the
-active event timespans. From the above we can see that the three cycles
-of each yellow event has been broken into parts of one cycle each, and
-interlaced with the single-cycle red events.
+The jagged edges indicate where wholes begin before, or end after, the
+active event timespans. From the above we can see that each green event
+has been broken into parts of one cycle each, and interlaced with the
+single-cycle red events.
 
 \subsection{Combining patterns with monadic
 binds}\label{combining-patterns-with-monadic-binds}
 
-On these foundations, a domain specific language can be built. The above
-functions are prefixed by \texttt{\_}, because they are considered
-internal functions and not part of the end-user interface. The reason
-for this is that TidalCycles follows the principle that
+The above functions are prefixed by \texttt{\_}, because they are
+considered internal functions and not part of the end-user interface.
+The reason for this is that TidalCycles follows the principle that
 \emph{everything} is a pattern. Accordingly, we require functions with
-the following time signature:
+the following time signature, where the time factor is also patterned:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -326,15 +331,16 @@ the following time signature:
 \end{Highlighting}
 \end{Shaded}
 
-How do we implement these functions? We somehow need a way to combine
-patterns of time with the patterns that are having their time structures
+To implement these functions, we somehow need a way to compose patterns
+of time together with the patterns that are having their time structures
 manipulated. This is where Haskell's monadic bind
 (\texttt{\textgreater{}\textgreater{}=}) comes into view, which does
 what we want - it lifts functional arguments into contexts such as
-patterns. This clarifies our problem as one of how to define patterns as
-an instance of Haskell's standard Monad typeclass. In particular, we
-need to define the bind operator \texttt{\textgreater{}\textgreater{}=}
-for patterns, with the type signature
+patterns. Our problem is now clarified as one of how to define the
+\texttt{Pattern} type as an instance of Haskell's standard Monad
+typeclass. In particular, we need to define the bind operator
+\texttt{\textgreater{}\textgreater{}=} for patterns, with the type
+signature
 \texttt{Pattern\ a\ -\textgreater{}\ (a\ -\textgreater{}\ Pattern\ b)\ -\textgreater{}\ Pattern\ b}.
 So, what should this bind do?
 
@@ -342,11 +348,10 @@ Certainly, our bind will need to create a new pattern, which as we saw
 above, will be a function from timespans to events. This function will
 need to be composed of other pattern functions, in particular the
 `outer' pattern given as the first argument, and `inner' pattern
-resulting from the second argument. The biggest question here is
-deciding how to deal with the timespans of events when composing pairs
-of patterns together. The two active timespans are straightforwardly
-combined, as the intersection. There is however ambiguity in how the two
-`whole' timespans should be combined.
+resulting from the second argument. The big remaining question is, how
+do we deal with the event timespans? The two active timespans are
+straightforwardly combined, as the intersection. There is ambiguity,
+however, in how the two `whole' timespans should be combined.
 
 \href{}{//}: \textless\textgreater{} The events returned from those
 inner pattern queries are then collated and returned, with one caveat --
@@ -356,14 +361,14 @@ intersection of the two.
 
 This ambiguity comes down to where the pattern \emph{structure} should
 come from - should we preserve the structure of the outer pattern, the
-inner pattern, or a combination of the two? In the case of the above
-\texttt{fast} function and its \texttt{slow}, \texttt{late} and
-\texttt{early} friends, we can say that we will always want to preserve
+inner pattern, or a combination of the two? In the case of the
+\texttt{fast} function (and its \texttt{slow}, \texttt{late} and
+\texttt{early} friends), we can say that we will always want to preserve
 the structure of the inner patterns - the patterns of values which come
 second in the function arguments. This is because we only want to
 transform a value pattern using a time pattern, but not otherwise change
 the value pattern's structure. (We will see examples of functions that
-do change the structure of events later.)
+\emph{do} change the structure of events later.)
 
 The following shows how inner, outer and `mix' binds can be implemented.
 
@@ -388,13 +393,11 @@ The following shows how inner, outer and `mix' binds can be implemented.
 
 In \texttt{mixBind}, the intersection of the event wholes is taken,
 therefore combining the time structures of the two patterns in what we
-term a `mix' bind.
-
-Alternatively, \texttt{innerBind} uses the time structure of `whole'
-timespans from the inner pattern, and \texttt{outerBind} from the outer
-pattern. The default bind in the \texttt{Monad} instance is set as a
-\texttt{mixBind}. I also define an \texttt{Applicative} instance based
-on this bind.
+term a `mix' bind. Alternatively, \texttt{innerBind} uses the time
+structure of `whole' timespans from the inner pattern, and
+\texttt{outerBind} from the outer pattern. The default bind in the
+\texttt{Monad} instance is set as a \texttt{mixBind}. I also define an
+\texttt{Applicative} instance based on this bind:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -429,7 +432,7 @@ define our \texttt{fast}, \texttt{slow}, \texttt{late} and
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fig5 }\OtherTok{=}\NormalTok{ stack [fast (atom }\DecValTok{2}\NormalTok{) p,}
+\NormalTok{fig5 }\OtherTok{=}\NormalTok{ stack [fast (atom }\FloatTok{1.5}\NormalTok{) p,}
 \NormalTok{              slow (atom }\DecValTok{2}\NormalTok{) p}
 \NormalTok{             ]}
     \KeywordTok{where}\NormalTok{ p }\OtherTok{=}\NormalTok{ interlace [atom }\StringTok{"red"}\NormalTok{, atom }\StringTok{"purple"}\NormalTok{]}
@@ -438,18 +441,42 @@ define our \texttt{fast}, \texttt{slow}, \texttt{late} and
 
 \includegraphics{../figures/fig5.pdf}\\
 
-From the above we can see that for the second pattern in the stack
-transformed with \texttt{slow}, because the \texttt{atom\ 2} repeats
-every cycle, the resulting events get split at cycle boundaries. However
-they keep their whole timespans with a duration of two cycles, and so
-the overall time structure is maintained. In the visualisations, events
-are filled with a gradient relative to the whole timespans, to make this
-a little clearer.
+From the above we can see that the resulting events get split at cycle
+boundaries, because the factor patterns (\texttt{atom\ 1.5} and
+\texttt{atom\ 2}) repeat every cycle. However more importantly the whole
+timespans are preserved, and so the overall time structure is
+maintained.\footnote{Note that events are filled with a gradient
+  relative to the whole timespans, to visualise which active part of a
+  whole timespan each event represents.}
+
+We could avoid this fragmentation by using a continuous rather than a
+discrete value in our pattern of factors:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{{-}{-} hold a value steady}
+\OtherTok{hold ::}\NormalTok{ a }\OtherTok{{-}\textgreater{}} \DataTypeTok{Pattern}\NormalTok{ a}
+\NormalTok{hold v }\OtherTok{=} \DataTypeTok{Pattern} \OperatorTok{$}\NormalTok{ \textbackslash{}ts }\OtherTok{{-}\textgreater{}}\NormalTok{ [}\DataTypeTok{Event} \DataTypeTok{Nothing}\NormalTok{ ts v]}
+
+\NormalTok{fig5b }\OtherTok{=}\NormalTok{ stack [fast (hold }\FloatTok{1.5}\NormalTok{) p,}
+\NormalTok{               slow (hold }\DecValTok{2}\NormalTok{) p}
+\NormalTok{              ]}
+    \KeywordTok{where}\NormalTok{ p }\OtherTok{=}\NormalTok{ interlace [atom }\StringTok{"red"}\NormalTok{, atom }\StringTok{"purple"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{../figures/fig5b.pdf}\\
+
+The fragmentation in the first example doesn't matter in practice
+though, and we can consider the two resulting patterns to be equivalent.
 
 \section{Masking and restructuring
 patterns}\label{masking-and-restructuring-patterns}
 
-So far we have manipulated time, but not structure.
+So far we have looked at the results of inner binds, where the structure
+of a transformed pattern is preserved. Lets now compare the use of inner
+and outer binds, and in particular their use in masking or restructuring
+pattern.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -461,12 +488,28 @@ So far we have manipulated time, but not structure.
 \NormalTok{\_ifpat }\DataTypeTok{False}\NormalTok{ \_ }\OtherTok{=}\NormalTok{ silence}
 
 \OtherTok{mask ::} \DataTypeTok{Pattern} \DataTypeTok{Bool} \OtherTok{{-}\textgreater{}} \DataTypeTok{Pattern}\NormalTok{ a }\OtherTok{{-}\textgreater{}} \DataTypeTok{Pattern}\NormalTok{ a}
-\NormalTok{mask bp p }\OtherTok{=}\NormalTok{ bp }\OtherTok{\textasciigrave{}outerBind\textasciigrave{}}\NormalTok{ \textbackslash{}b }\OtherTok{{-}\textgreater{}}\NormalTok{ \_ifpat b p}
+\NormalTok{mask bp p }\OtherTok{=}\NormalTok{ bp }\OtherTok{\textasciigrave{}innerBind\textasciigrave{}}\NormalTok{ \textbackslash{}b }\OtherTok{{-}\textgreater{}}\NormalTok{ \_ifpat b p}
 
 \OtherTok{struct ::} \DataTypeTok{Pattern} \DataTypeTok{Bool} \OtherTok{{-}\textgreater{}} \DataTypeTok{Pattern}\NormalTok{ a }\OtherTok{{-}\textgreater{}} \DataTypeTok{Pattern}\NormalTok{ a}
-\NormalTok{struct bp p }\OtherTok{=}\NormalTok{ bp }\OtherTok{\textasciigrave{}innerBind\textasciigrave{}}\NormalTok{ \textbackslash{}b }\OtherTok{{-}\textgreater{}}\NormalTok{ \_ifpat b p}
+\NormalTok{struct bp p }\OtherTok{=}\NormalTok{ bp }\OtherTok{\textasciigrave{}outerBind\textasciigrave{}}\NormalTok{ \textbackslash{}b }\OtherTok{{-}\textgreater{}}\NormalTok{ \_ifpat b p}
 \end{Highlighting}
 \end{Shaded}
+
+The bind is the only difference between these two functions, but they
+have very different practical uses.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fig6 }\OtherTok{=}\NormalTok{ stack [}
+\NormalTok{    pat,}
+\NormalTok{    struct (interlaceCycle [atom }\DataTypeTok{True}\NormalTok{, atom }\DataTypeTok{True}\NormalTok{, atom }\DataTypeTok{False}\NormalTok{, atom }\DataTypeTok{True}\NormalTok{]) pat,}
+\NormalTok{    mask (interlaceCycle [atom }\DataTypeTok{True}\NormalTok{, atom }\DataTypeTok{True}\NormalTok{, atom }\DataTypeTok{False}\NormalTok{, atom }\DataTypeTok{True}\NormalTok{]) pat}
+\NormalTok{  ]}
+  \KeywordTok{where}\NormalTok{ pat }\OtherTok{=}\NormalTok{ interlaceCycle [atom }\StringTok{"red"}\NormalTok{, atom }\StringTok{"purple"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{../figures/fig6.pdf}\\
 
 \appendix
 
@@ -484,3 +527,18 @@ functions}\label{preamble-and-supporting-functions}
 \NormalTok{intersect (}\DataTypeTok{TimeSpan}\NormalTok{ b e) (}\DataTypeTok{TimeSpan}\NormalTok{ b\textquotesingle{} e\textquotesingle{}) }\OtherTok{=} \DataTypeTok{TimeSpan}\NormalTok{ (}\FunctionTok{max}\NormalTok{ b b\textquotesingle{}) (}\FunctionTok{min}\NormalTok{ e e\textquotesingle{})}
 \end{Highlighting}
 \end{Shaded}
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-elliottFunctionalReactiveAnimation1997}
+\CSLLeftMargin{{[}1{]} }%
+\CSLRightInline{Elliott, C. and Hudak, P. 1997.
+\href{https://doi.org/10.1145/258948.258973}{Functional reactive
+animation}. \emph{Proceedings of the second ACM SIGPLAN international
+conference on Functional programming} (New York, NY, USA, Aug. 1997),
+263--273.}
+
+\end{CSLReferences}
