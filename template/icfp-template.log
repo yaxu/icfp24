@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.14)  15 JAN 2024 15:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.14)  17 JAN 2024 11:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1068,11 +1068,11 @@ Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
 (textcomp)             Default family used instead on input line 195.
  [3.3]
-<../figures/fig1.pdf, id=79, 346.89601pt x 37.00224pt>
+<../figures/fig1.pdf, id=83, 346.89601pt x 37.21906pt>
 File: ../figures/fig1.pdf Graphic file (type pdf)
 <use ../figures/fig1.pdf>
 Package pdftex.def Info: ../figures/fig1.pdf  used on input line 205.
-(pdftex.def)             Requested size: 346.89516pt x 37.00214pt.
+(pdftex.def)             Requested size: 346.89516pt x 37.21895pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
@@ -1101,21 +1101,21 @@ Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             Default family used instead on input line 223.
 LaTeX Font Info:    Font shape `T1/zi4/m/it' will be
 (Font)              scaled to size 10.0pt on input line 226.
-<../figures/fig2.pdf, id=80, 346.89601pt x 18.93474pt>
+<../figures/fig2.pdf, id=84, 346.89601pt x 19.15155pt>
 File: ../figures/fig2.pdf Graphic file (type pdf)
 <use ../figures/fig2.pdf>
 Package pdftex.def Info: ../figures/fig2.pdf  used on input line 244.
-(pdftex.def)             Requested size: 346.89516pt x 18.93468pt.
+(pdftex.def)             Requested size: 346.89516pt x 19.15149pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
-<../figures/fig3.pdf, id=81, 346.89601pt x 37.00224pt>
+<../figures/fig3.pdf, id=85, 346.89601pt x 37.21906pt>
 File: ../figures/fig3.pdf Graphic file (type pdf)
 <use ../figures/fig3.pdf>
 Package pdftex.def Info: ../figures/fig3.pdf  used on input line 256.
-(pdftex.def)             Requested size: 346.89516pt x 37.00214pt.
+(pdftex.def)             Requested size: 346.89516pt x 37.21895pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
@@ -1130,11 +1130,11 @@ fs with page group included in a single page
 pdfTeX warning: pdflatex (file ../figures/fig3.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
 >]
-<../figures/fig4.pdf, id=160, 346.89601pt x 18.93474pt>
+<../figures/fig4.pdf, id=164, 346.89601pt x 19.15155pt>
 File: ../figures/fig4.pdf Graphic file (type pdf)
 <use ../figures/fig4.pdf>
 Package pdftex.def Info: ../figures/fig4.pdf  used on input line 312.
-(pdftex.def)             Requested size: 346.89516pt x 18.93468pt.
+(pdftex.def)             Requested size: 346.89516pt x 19.15149pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
@@ -1145,86 +1145,201 @@ Underfull \hbox (badness 10000) in paragraph at lines 312--313
 Package hyperref Warning: Suppressing link with empty target on input line 356.
 
 
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 414.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 414.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 417.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 417.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 418.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 418.
 [6.6]
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
-(textcomp)             Default family used instead on input line 423.
+(textcomp)             Default family used instead on input line 432.
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
-(textcomp)             Default family used instead on input line 423.
-<../figures/fig5.pdf, id=187, 346.89601pt x 37.00224pt>
+(textcomp)             Default family used instead on input line 432.
+<../figures/fig5.pdf, id=191, 346.89601pt x 37.21906pt>
 File: ../figures/fig5.pdf Graphic file (type pdf)
 <use ../figures/fig5.pdf>
-Package pdftex.def Info: ../figures/fig5.pdf  used on input line 442.
-(pdftex.def)             Requested size: 346.89516pt x 37.00214pt.
+Package pdftex.def Info: ../figures/fig5.pdf  used on input line 451.
+(pdftex.def)             Requested size: 346.89516pt x 37.21895pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--443
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 448.
+(Font)              scaled to size 10.0pt on input line 457.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 448.
+(Font)              scaled to size 7.3pt on input line 457.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.2pt on input line 450.
-<../figures/fig5b.pdf, id=189, 346.89601pt x 37.00224pt>
+(Font)              scaled to size 6.2pt on input line 459.
+<../figures/fig5b.pdf, id=193, 346.89601pt x 37.21906pt>
 File: ../figures/fig5b.pdf Graphic file (type pdf)
 <use ../figures/fig5b.pdf>
-Package pdftex.def Info: ../figures/fig5b.pdf  used on input line 468.
-(pdftex.def)             Requested size: 346.89516pt x 37.00214pt.
+Package pdftex.def Info: ../figures/fig5b.pdf  used on input line 477.
+(pdftex.def)             Requested size: 346.89516pt x 37.21895pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--469
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
 
  []
 
-[7.7 <../figures/fig5.pdf> <../figures/fig5b.pdf
 
-pdfTeX warning: pdflatex (file ../figures/fig5b.pdf): PDF inclusion: multiple p
-dfs with page group included in a single page
->]
+Underfull \vbox (badness 1072) has occurred while \output is active []
+
+ [7.7 <../figures/fig5.pdf>]
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
-(textcomp)             Default family used instead on input line 491.
+(textcomp)             Default family used instead on input line 501.
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
-(textcomp)             Default family used instead on input line 491.
+(textcomp)             Default family used instead on input line 501.
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
-(textcomp)             Default family used instead on input line 494.
+(textcomp)             Default family used instead on input line 504.
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
-(textcomp)             Default family used instead on input line 494.
-<../figures/fig6.pdf, id=268, 346.89601pt x 55.06973pt>
+(textcomp)             Default family used instead on input line 504.
+<../figures/fig6.pdf, id=244, 346.89601pt x 55.28654pt>
 File: ../figures/fig6.pdf Graphic file (type pdf)
 <use ../figures/fig6.pdf>
-Package pdftex.def Info: ../figures/fig6.pdf  used on input line 512.
-(pdftex.def)             Requested size: 346.89516pt x 55.06958pt.
+Package pdftex.def Info: ../figures/fig6.pdf  used on input line 524.
+(pdftex.def)             Requested size: 346.89516pt x 55.28639pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
+Underfull \hbox (badness 10000) in paragraph at lines 524--525
 
  []
 
-) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 536.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 536.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 537.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 537.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 538.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 538.
+[8.8 <../figures/fig5b.pdf> <../figures/fig6.pdf
+
+pdfTeX warning: pdflatex (file ../figures/fig6.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+>]
+<../figures/fig7.pdf, id=381, 346.89601pt x 19.15155pt>
+File: ../figures/fig7.pdf Graphic file (type pdf)
+<use ../figures/fig7.pdf>
+Package pdftex.def Info: ../figures/fig7.pdf  used on input line 546.
+(pdftex.def)             Requested size: 346.89516pt x 19.15149pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
+
+ []
+
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 554.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 554.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 555.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 555.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 556.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 556.
+<../figures/fig8.pdf, id=382, 346.89601pt x 19.15155pt>
+File: ../figures/fig8.pdf Graphic file (type pdf)
+<use ../figures/fig8.pdf>
+Package pdftex.def Info: ../figures/fig8.pdf  used on input line 561.
+(pdftex.def)             Requested size: 346.89516pt x 19.15149pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
+
+ []
+
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 572.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 572.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 573.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 573.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 574.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 574.
+<../figures/fig9.pdf, id=383, 346.89601pt x 19.15155pt>
+File: ../figures/fig9.pdf Graphic file (type pdf)
+<use ../figures/fig9.pdf>
+Package pdftex.def Info: ../figures/fig9.pdf  used on input line 579.
+(pdftex.def)             Requested size: 346.89516pt x 19.15149pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--580
+
+ []
+
+[9.9 <../figures/fig7.pdf> <../figures/fig8.pdf
+
+pdfTeX warning: pdflatex (file ../figures/fig8.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+> <../figures/fig9.pdf
+
+pdfTeX warning: pdflatex (file ../figures/fig9.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+>]) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [8.8 <../figures/fig6.pdf>] (./icfp-template.aux)
+) [10.10]
+(./icfp-template.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `icfp-template.out' has not changed.
-(rerunfilecheck)             Checksum: BB207409058F0319913C84FFCB6D3537;2060.
+(rerunfilecheck)             Checksum: BC229F109B1B0D13584FF38B44179A15;2329.
  ) 
 Here is how much of TeX's memory you used:
- 21554 strings out of 480247
- 351102 string characters out of 5896150
- 695844 words of memory out of 5000000
- 38581 multiletter control sequences out of 15000+600000
+ 21580 strings out of 480247
+ 351708 string characters out of 5896150
+ 691421 words of memory out of 5000000
+ 38601 multiletter control sequences out of 15000+600000
  622893 words of font info for 308 fonts, out of 8000000 for 9000
  175 hyphenation exceptions out of 8191
- 84i,12n,131p,1010b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,12n,131p,1010b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc} </home
 /alex/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk>{/usr/s
 hare/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/usr/share/tex
@@ -1242,10 +1357,10 @@ lic/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/newtx/txsys.pfb>
-Output written on icfp-template.pdf (8 pages, 447472 bytes).
+Output written on icfp-template.pdf (10 pages, 455806 bytes).
 PDF statistics:
- 438 PDF objects out of 1000 (max. 8388607)
- 395 compressed objects within 4 object streams
- 23 named destinations out of 1000 (max. 500000)
- 92812 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 508 PDF objects out of 1000 (max. 8388607)
+ 459 compressed objects within 5 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 92835 words of extra memory for PDF output out of 106986 (max. 10000000)
 

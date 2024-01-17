@@ -11,7 +11,7 @@ import qualified Graphics.Rendering.Cairo as C
 
 cyclesperinch = 1
 
-linewidth = 0.012
+linewidth = 0.015
 rowheight = 0.25
 lh = linewidth/2
 gap = linewidth
@@ -40,6 +40,9 @@ main = do renderPattern 12 "fig1.svg" fig1
           renderPattern 12 "fig5.svg" fig5
           renderPattern 12 "fig5b.svg" fig5b
           renderPattern 12 "fig6.svg" fig6
+          renderPattern 12 "fig7.svg" fig7
+          renderPattern 12 "fig8.svg" fig8
+          renderPattern 12 "fig9.svg" fig9
 
 renderPattern cycles name pat =
   do let events = query pat $ TimeSpan 0 (toRational cycles)
@@ -53,7 +56,7 @@ renderPattern cycles name pat =
 
 drawEvent (Event Nothing ts v) = drawEvent $ Event (Just ts) ts v
 drawEvent (Event (Just (TimeSpan wb we)) (TimeSpan ab ae) v) =
-  do let colour = fromMaybe grey $ readColourName v
+  do let colour = v
          RGB r g b = toSRGB colour
          wb', we', ab', ae' :: Double
          wb' = fromRational wb * cyclewidth

@@ -175,7 +175,7 @@ stack pats = Pattern $ \timespan -> concatMap (`query` timespan) pats
 ```
 
 ```haskell
-fig1 = stack [atom "pink", atom "purple"]
+fig1 = stack [atom pink, atom purple]
 ```
 
 ![](../figures/fig1.pdf)\
@@ -209,7 +209,7 @@ using both `interlace` and `stack`. In the following time is from left to right,
 with the vertical axis used to show simultaneously occuring events.
 
 ```haskell
-fig2 = interlace [atom "pink", atom "purple"]
+fig2 = interlace [atom pink, atom purple]
 ```
 
 ![](../figures/fig2.pdf)\
@@ -217,8 +217,8 @@ fig2 = interlace [atom "pink", atom "purple"]
 We can now combine stacks and interlacements:
 
 ```haskell
-fig3 = stack [atom "red",
-              interlace [atom "pink", interlace [atom "purple", atom "orange"]]
+fig3 = stack [atom red,
+              interlace [atom pink, interlace [atom purple, atom orange]]
              ]
 ```
 
@@ -268,7 +268,7 @@ We can apply visualisation in understanding how events can become broken up. If
 cycle?
 
 ```haskell
-fig4 = interlace [atom "red", _slow 3 $ atom "green"]
+fig4 = interlace [atom red, _slow 3 $ atom green]
 ```
 
 ![](../figures/fig4.pdf)\
@@ -322,6 +322,8 @@ events later.)
 
 The following shows how inner, outer and 'mix' binds can be implemented.
 
+TODO - this doesn't work well with outer (?) continuous events
+
 ```haskell
 bindWith :: (Maybe TimeSpan -> Maybe TimeSpan -> Maybe TimeSpan) ->
                 Pattern a -> (a -> Pattern b) -> Pattern b
@@ -344,7 +346,8 @@ the time structures of the two patterns in what we term a 'mix'
 bind. Alternatively, `innerBind` uses the time structure of 'whole' timespans
 from the inner pattern, and `outerBind` from the outer pattern. The default bind
 in the `Monad` instance is set as a `mixBind`. I also define an `Applicative`
-instance based on this bind:
+instance based on this bind, with additional `<<*>` and `<*>>` operators based
+on outer and inner binds respectively:
 
 ```haskell
 instance Monad Pattern where
@@ -352,8 +355,11 @@ instance Monad Pattern where
 
 instance Applicative Pattern where
   pure = atom
-  pf <*> px = pf >>= (<$> px)
+  pf <*> px = pf `mixBind` (<$> px)
 
+-- (<<*>), (<*>>) :: Pattern (a -> b) -> Pattern a -> Pattern b
+pf <<*> px = pf `outerBind` (<$> px)
+pf <*>> px = pf `innerBind` (<$> px)
 ```
 
 Using this, we can make a function `patternify_x` that lifts a function's first
@@ -377,7 +383,7 @@ early = patternify_x _early
 fig5 = stack [fast (atom 1.5) p,
               slow (atom 2) p
              ]
-    where p = interlace [atom "red", atom "purple"]
+    where p = interlace [atom red, atom purple]
 ```
 
 ![](../figures/fig5.pdf)\
@@ -400,13 +406,14 @@ hold v = Pattern $ \ts -> [Event Nothing ts v]
 fig5b = stack [fast (hold 1.5) p,
                slow (hold 2) p
               ]
-    where p = interlace [atom "red", atom "purple"]
+    where p = interlace [atom red, atom purple]
 ```
 
 ![](../figures/fig5b.pdf)\
 
-The fragmentation in the first example doesn't matter in practice though, and we
-can consider the two resulting patterns to be equivalent.
+In practice we can consider the patterns to be equivalent -- the overall
+structure is the same, whether or not contituent events have become fragmented
+by transformations.
 
 # Masking and restructuring patterns
 
@@ -440,13 +447,62 @@ fig6 = stack [
     struct (interlaceCycle [atom True, atom True, atom False, atom True]) pat,
     mask (interlaceCycle [atom True, atom True, atom False, atom True]) pat
   ]
-  where pat = interlaceCycle [atom "red", atom "purple"]
+  where pat = interlaceCycle [atom red, atom purple]
 ```
 
-Again the red events are fragmented in the above use of `mask`, but this does
-not matter in practice, as the whole timespans are maintained.
-
 ![](../figures/fig6.pdf)\
+
+# Combining continuous and discrete events
+
+A practical advantage of representing both continuous and discrete events in one
+type, is that they can be composed together. For example the following blends
+between two different discrete patterns, using a continuous sinewave:
+
+```haskell
+fig7 = atom red `outerBind` \a
+         -> atom blue `outerBind` \b
+         -> _slow 12 sinewave `outerBind` \x
+         -> return $ blend ((x+1)/2) a b
+```
+
+With the use of `outerBind`, the structure is taken from the first pattern, and
+so the events are discrete.
+
+![](../figures/fig7.pdf)\
+
+Unfortunately, our Pattern monad is not fully lawful, in that flipping the order
+of the patterns while also flipping from outer to inner bind, does not produce
+the same results as you might hope:
+
+```haskell
+fig8 = _slow 12 sinewave `innerBind` \x
+         -> atom blue `innerBind` \b
+         -> atom red `innerBind` \a
+         -> return $ blend ((x+1)/2) a b
+```
+
+![](../figures/fig8.pdf)\
+
+The reason for this is that to produce the above visualisation, the resulting
+pattern is queried for twelve cycles at once. This is passed to the continuous
+pattern, which then produces a single event at that resolution. All is not lost,
+however, if we combine this resulting pattern with another discrete one, the
+correct result is shown again:
+
+```haskell
+fig9 = struct (atom True) $
+        _slow 12 sinewave `innerBind` \x
+         -> atom blue `innerBind` \b
+         -> atom red `innerBind` \a
+         -> return $ blend ((x+1)/2) a b
+```
+
+![](../figures/fig9.pdf)\
+
+The easiest workaround for this issue is to take care that continuous patterns
+are contained within discrete ones. In practice, this can be taken care of in
+the design of the combinator library, and is not something that the end-user
+programmer needs to worry about.
 
 \appendix
 
@@ -457,9 +513,12 @@ module Pattern where
 
 import Control.Applicative
 import Data.Fixed
+import Data.Colour
+import Data.Colour.Names
 
 intersect :: TimeSpan -> TimeSpan -> TimeSpan
 intersect (TimeSpan b e) (TimeSpan b' e') = TimeSpan (max b b') (min e e')
+infixl 4 <<*>, <*>>
 ```
 
 # References
