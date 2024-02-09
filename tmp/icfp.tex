@@ -551,10 +551,11 @@ does not produce the same results as you might hope:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fig8 }\OtherTok{=}\NormalTok{ \_slow }\DecValTok{12}\NormalTok{ sinewave }\OtherTok{\textasciigrave{}innerBind\textasciigrave{}}\NormalTok{ \textbackslash{}x}
-         \OtherTok{{-}\textgreater{}}\NormalTok{ atom blue }\OtherTok{\textasciigrave{}innerBind\textasciigrave{}}\NormalTok{ \textbackslash{}b}
-         \OtherTok{{-}\textgreater{}}\NormalTok{ atom red }\OtherTok{\textasciigrave{}innerBind\textasciigrave{}}\NormalTok{ \textbackslash{}a}
-         \OtherTok{{-}\textgreater{}} \FunctionTok{return} \OperatorTok{$}\NormalTok{ blend ((x}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\DecValTok{2}\NormalTok{) a b}
+\NormalTok{fig8 }\OtherTok{=}\NormalTok{ blend }\OperatorTok{\textless{}$\textgreater{}}\NormalTok{ (\_slow }\DecValTok{4}\NormalTok{ sinewave) }\OperatorTok{\textless{}*\textgreater{}\textgreater{}}\NormalTok{ atom blue }\OperatorTok{\textless{}*\textgreater{}\textgreater{}}\NormalTok{ atom red}
+\CommentTok{{-}{-} fig8 = \_slow 12 sinewave \textasciigrave{}innerBind\textasciigrave{} \textbackslash{}x}
+\CommentTok{{-}{-}          {-}\textgreater{} atom blue \textasciigrave{}innerBind\textasciigrave{} \textbackslash{}b}
+\CommentTok{{-}{-}          {-}\textgreater{} atom red \textasciigrave{}innerBind\textasciigrave{} \textbackslash{}a}
+\CommentTok{{-}{-}          {-}\textgreater{} return $ blend ((x+1)/2) a b}
 \end{Highlighting}
 \end{Shaded}
 
@@ -578,9 +579,8 @@ pattern with another discrete one, the correct result is shown again:
 
 \includegraphics{../figures/fig9.pdf}\\
 
-The easiest workaround for this issue is to take care that continuous
-patterns are contained within discrete ones. In practice, this can be
-taken care of in the design of the combinator library, and is not
+This is a rather thorny issue, but in practice, finding the right order
+of application is taken care of in the design of the DSL, and is not
 something that the end-user programmer needs to worry about.
 
 \appendix

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.14)  17 JAN 2024 11:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.14)  9 FEB 2024 12:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1257,12 +1257,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 546--547
 
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
-(textcomp)             Default family used instead on input line 554.
-Package textcomp Info: Symbol \textasciigrave not provided by
-(textcomp)             font family zi4 in TS1 encoding.
-(textcomp)             Default family used instead on input line 554.
-Package textcomp Info: Symbol \textasciigrave not provided by
-(textcomp)             font family zi4 in TS1 encoding.
 (textcomp)             Default family used instead on input line 555.
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
@@ -1273,24 +1267,24 @@ Package textcomp Info: Symbol \textasciigrave not provided by
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
 (textcomp)             Default family used instead on input line 556.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 557.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 557.
 <../figures/fig8.pdf, id=382, 346.89601pt x 19.15155pt>
 File: ../figures/fig8.pdf Graphic file (type pdf)
 <use ../figures/fig8.pdf>
-Package pdftex.def Info: ../figures/fig8.pdf  used on input line 561.
+Package pdftex.def Info: ../figures/fig8.pdf  used on input line 562.
 (pdftex.def)             Requested size: 346.89516pt x 19.15149pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
+Underfull \hbox (badness 10000) in paragraph at lines 562--563
 
  []
 
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
-(textcomp)             Default family used instead on input line 572.
-Package textcomp Info: Symbol \textasciigrave not provided by
-(textcomp)             font family zi4 in TS1 encoding.
-(textcomp)             Default family used instead on input line 572.
-Package textcomp Info: Symbol \textasciigrave not provided by
-(textcomp)             font family zi4 in TS1 encoding.
 (textcomp)             Default family used instead on input line 573.
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
@@ -1301,13 +1295,19 @@ Package textcomp Info: Symbol \textasciigrave not provided by
 Package textcomp Info: Symbol \textasciigrave not provided by
 (textcomp)             font family zi4 in TS1 encoding.
 (textcomp)             Default family used instead on input line 574.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 575.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 575.
 <../figures/fig9.pdf, id=383, 346.89601pt x 19.15155pt>
 File: ../figures/fig9.pdf Graphic file (type pdf)
 <use ../figures/fig9.pdf>
-Package pdftex.def Info: ../figures/fig9.pdf  used on input line 579.
+Package pdftex.def Info: ../figures/fig9.pdf  used on input line 580.
 (pdftex.def)             Requested size: 346.89516pt x 19.15149pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 579--580
+Underfull \hbox (badness 10000) in paragraph at lines 580--581
 
  []
 
@@ -1333,14 +1333,15 @@ Package rerunfilecheck Info: File `icfp-template.out' has not changed.
 (rerunfilecheck)             Checksum: BC229F109B1B0D13584FF38B44179A15;2329.
  ) 
 Here is how much of TeX's memory you used:
- 21580 strings out of 480247
- 351708 string characters out of 5896150
- 691421 words of memory out of 5000000
- 38601 multiletter control sequences out of 15000+600000
- 622893 words of font info for 308 fonts, out of 8000000 for 9000
+ 21590 strings out of 480247
+ 351895 string characters out of 5896150
+ 691440 words of memory out of 5000000
+ 38605 multiletter control sequences out of 15000+600000
+ 623779 words of font info for 312 fonts, out of 8000000 for 9000
  175 hyphenation exceptions out of 8191
  84i,12n,131p,1010b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc} </home
+ </home/alex/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcit1000.600p
+k>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc} </home
 /alex/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk>{/usr/s
 hare/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/usr/share/tex
 live/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texlive/t
@@ -1357,10 +1358,10 @@ lic/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/newtx/txsys.pfb>
-Output written on icfp-template.pdf (10 pages, 455806 bytes).
+Output written on icfp-template.pdf (10 pages, 456172 bytes).
 PDF statistics:
- 508 PDF objects out of 1000 (max. 8388607)
- 459 compressed objects within 5 object streams
+ 513 PDF objects out of 1000 (max. 8388607)
+ 463 compressed objects within 5 object streams
  26 named destinations out of 1000 (max. 500000)
- 92835 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 93859 words of extra memory for PDF output out of 106986 (max. 10000000)
 

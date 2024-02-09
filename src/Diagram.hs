@@ -46,7 +46,7 @@ main = do renderPattern 12 "fig1.svg" fig1
 
 renderPattern cycles name pat =
   do let events = query pat $ TimeSpan 0 (toRational cycles)
-         eventses = map (map drawEvent) $ layer $ reverse events
+         eventses = map (map (drawEvent True)) $ layer $ reverse events
          layercount = length eventses
      C.withSVGSurface ("figures/" ++ name)  (72*cyclewidth*cycles) (72*((rowheight)*(fromIntegral layercount)+linewidth)) $ \surf ->
        C.renderWith surf $ do
@@ -54,8 +54,8 @@ renderPattern cycles name pat =
          C.setOperator C.OperatorOver
          sequence $ intercalate [C.translate 0 rowheight] $ eventses
 
-drawEvent (Event Nothing ts v) = drawEvent $ Event (Just ts) ts v
-drawEvent (Event (Just (TimeSpan wb we)) (TimeSpan ab ae) v) =
+drawEvent _ (Event Nothing ts v) = drawEvent False $ Event (Just ts) ts v
+drawEvent discrete (Event (Just (TimeSpan wb we)) (TimeSpan ab ae) v) =
   do let colour = v
          RGB r g b = toSRGB colour
          wb', we', ab', ae' :: Double
@@ -70,10 +70,7 @@ drawEvent (Event (Just (TimeSpan wb we)) (TimeSpan ab ae) v) =
 
      C.save
 
-     -- when (wb' < ab' || we' > ab') $ do
-     --   C.setSourceRGB rl gl bl
-     --   C.rectangle lwb 0 (we'-lwb) cellheight
-     --   C.fill
+     -- draw rectangle
      let rectx = (ab')
          rectw = ae'-ab'-(lh)-gap
          gradientStart = fromRational $ 1 - 0.3*((ab-wb) / (we - wb))
@@ -94,46 +91,49 @@ drawEvent (Event (Just (TimeSpan wb we)) (TimeSpan ab ae) v) =
          
      C.setLineWidth linewidth
 
-     if (wb' < ab') then do
-       dashedl
-       C.setSourceRGBA startr startg startb 1
-       C.setLineCap C.LineCapSquare
-       C.moveTo (lab-lh) lh
-       C.lineTo (lab-lh) cellheight
-       C.stroke
-     else do
-       C.setDash [] 0
-       C.setSourceRGB 0 0 0
-       C.setLineCap C.LineCapRound
-       C.moveTo lab lh
-       C.lineTo lab cellheight
-       C.stroke
-
-     if (we' > ae') then do
-       dashedr
-       C.setSourceRGBA stopr stopg stopb 1
-       C.setLineCap C.LineCapSquare
-       C.moveTo lae lh
-       C.lineTo lae cellheight
-       C.stroke
-     else do
-       C.setDash [] 0
-       C.setSourceRGB 0 0 0
-       C.setLineCap C.LineCapRound
-       C.moveTo lae lh
-       C.lineTo lae cellheight
-       C.stroke
+     when discrete $ do 
+         -- left edge
+         if (wb' < ab') then do
+           dashedl
+           C.setSourceRGBA startr startg startb 1
+           C.setLineCap C.LineCapSquare
+           C.moveTo (lab-lh) lh
+           C.lineTo (lab-lh) cellheight
+           C.stroke
+         else do
+           C.setDash [] 0
+           C.setSourceRGB 0 0 0
+           C.setLineCap C.LineCapRound
+           C.moveTo lab lh
+           C.lineTo lab cellheight
+           C.stroke
+    
+         -- right edge
+         if (we' > ae') then do
+           dashedr
+           C.setSourceRGBA stopr stopg stopb 1
+           C.setLineCap C.LineCapSquare
+           C.moveTo lae lh
+           C.lineTo lae cellheight
+           C.stroke
+         else do
+           C.setDash [] 0
+           C.setSourceRGB 0 0 0
+           C.setLineCap C.LineCapRound
+           C.moveTo lae lh
+           C.lineTo lae cellheight
+           C.stroke
 
      C.setLineCap C.LineCapRound
      C.setDash [] 0
      C.setSourceRGB 0 0 0
 
-     -- top line
+     -- top edge
      C.moveTo lab lh
      C.lineTo lae lh
      C.stroke
 
-     -- bottom line
+     -- bottom edge
      C.moveTo lab cellheight
      C.lineTo lae cellheight
      C.stroke

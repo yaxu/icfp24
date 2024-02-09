@@ -475,10 +475,11 @@ of the patterns while also flipping from outer to inner bind, does not produce
 the same results as you might hope:
 
 ```haskell
-fig8 = _slow 12 sinewave `innerBind` \x
-         -> atom blue `innerBind` \b
-         -> atom red `innerBind` \a
-         -> return $ blend ((x+1)/2) a b
+fig8 = blend <$> (_slow 4 sinewave) <*>> atom blue <*>> atom red
+-- fig8 = _slow 12 sinewave `innerBind` \x
+--          -> atom blue `innerBind` \b
+--          -> atom red `innerBind` \a
+--          -> return $ blend ((x+1)/2) a b
 ```
 
 ![](../figures/fig8.pdf)\
@@ -499,10 +500,9 @@ fig9 = struct (atom True) $
 
 ![](../figures/fig9.pdf)\
 
-The easiest workaround for this issue is to take care that continuous patterns
-are contained within discrete ones. In practice, this can be taken care of in
-the design of the combinator library, and is not something that the end-user
-programmer needs to worry about.
+This is a rather thorny issue, but in practice, finding the right order of
+application is taken care of in the design of the DSL, and is not something that
+the end-user programmer needs to worry about.
 
 \appendix
 
